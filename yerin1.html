@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>송예린 학생 분기 리포트 | 2025.08 – 2026.03</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a2e;
+  --cream: #faf8f4;
+  --accent: #c45b3f;
+  --accent-light: #e8a690;
+  --sage: #5a8a60;
+  --sage-light: #d4e4d6;
+  --blue: #4a6fa5;
+  --blue-light: #d0dff0;
+  --gold: #b8860b;
+  --gold-light: #f5e6c8;
+  --warm-gray: #8a8578;
+  --light-gray: #eae6df;
+  --card-bg: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.75;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========== HERO ========== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 24px;
+  background: linear-gradient(165deg, #1a1a2e 0%, #2d2d4a 40%, #3d2b3a 70%, #4a2e2e 100%);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196,91,63,0.15) 0%, transparent 70%);
+  animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+.hero-badge {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  border: 1px solid rgba(232,166,144,0.3);
+  padding: 6px 20px;
+  border-radius: 30px;
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(30px, 5.5vw, 52px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.35;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 em { font-style: normal; color: var(--accent-light); }
+
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.55);
+  font-weight: 300;
+  margin-bottom: 56px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-stat { text-align: center; }
+
+.hero-stat-num {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.hero-stat-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 2px;
+  margin-top: 8px;
+}
+
+/* ========== COMMON ========== */
+.wrap { max-width: 860px; margin: 0 auto; padding: 72px 24px; }
+.label { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
+.title { font-family: 'Noto Serif KR', serif; font-size: clamp(22px, 3.8vw, 32px); font-weight: 900; margin-bottom: 12px; line-height: 1.4; }
+.desc { font-size: 14.5px; color: var(--warm-gray); max-width: 620px; margin-bottom: 44px; line-height: 1.85; }
+
+/* ========== 편지 스타일 ========== */
+.letter {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 36px;
+  border: 1px solid var(--light-gray);
+  margin-bottom: 48px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.letter h3 { font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 700; margin-bottom: 20px; }
+.letter p { font-size: 14.5px; color: #555; line-height: 2; margin-bottom: 12px; }
+.hl { background: linear-gradient(to top, #fce4db 40%, transparent 40%); font-weight: 600; }
+
+/* ========== 한눈에 보기 ========== */
+.glance { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 32px; }
+
+.gc {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 26px 24px;
+  border: 1px solid var(--light-gray);
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: transform 0.3s;
+}
+
+.gc:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.05); }
+.gc-e { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.gc h3 { font-size: 14px; font-weight: 700; margin-bottom: 5px; }
+.gc p { font-size: 13px; color: #777; line-height: 1.65; }
+
+/* ========== 서사 흐름도 ========== */
+.flow { display: flex; align-items: stretch; gap: 0; margin: 40px 0; flex-wrap: wrap; }
+
+.fs {
+  flex: 1;
+  min-width: 170px;
+  background: var(--card-bg);
+  border: 1px solid var(--light-gray);
+  padding: 24px 18px;
+  text-align: center;
+  position: relative;
+}
+
+.fs:first-child { border-radius: 14px 0 0 14px; }
+.fs:last-child { border-radius: 0 14px 14px 0; }
+.fs:not(:last-child)::after {
+  content: '→'; position: absolute; right: -10px; top: 50%;
+  transform: translateY(-50%); font-size: 18px; color: var(--accent);
+  z-index: 2; background: var(--cream); width: 20px; text-align: center;
+}
+
+.fs .fe { font-size: 28px; margin-bottom: 8px; }
+.fs h5 { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+.fs p { font-size: 11.5px; color: #888; line-height: 1.6; }
+
+/* ========== 로드맵 ========== */
+.rm { display: flex; flex-direction: column; gap: 0; }
+
+.rs { display: flex; gap: 24px; position: relative; padding-bottom: 36px; }
+.rs:last-child { padding-bottom: 0; }
+
+.rl { width: 56px; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+
+.ri {
+  width: 48px; height: 48px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0; position: relative; z-index: 1;
+}
+
+.rline { flex: 1; width: 2px; background: var(--light-gray); margin-top: 8px; }
+.rs:last-child .rline { display: none; }
+
+.rr { flex: 1; padding-top: 6px; }
+.rr .rp { font-size: 11px; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+.rr h4 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.rr p { font-size: 13px; color: #666; line-height: 1.8; }
+
+.rb { display: inline-block; font-size: 10px; padding: 3px 10px; border-radius: 10px; font-weight: 700; margin-top: 8px; }
+.rb-d { background: var(--sage-light); color: var(--sage); }
+.rb-n { background: var(--gold-light); color: var(--gold); }
+.rb-p { background: var(--blue-light); color: var(--blue); }
+
+/* ========== 교과 카드 ========== */
+.sc { display: grid; gap: 14px; }
+
+.si {
+  background: var(--card-bg); border-radius: 14px;
+  border: 1px solid var(--light-gray); padding: 22px 24px;
+  display: flex; gap: 18px; align-items: flex-start;
+  transition: transform 0.2s;
+}
+
+.si:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.04); }
+
+.sb {
+  flex-shrink: 0; width: 56px; height: 56px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 800; color: #fff;
+}
+
+.sd { flex: 1; }
+.sd h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.sd .sk { font-size: 12.5px; color: var(--accent); font-weight: 600; margin-bottom: 4px; }
+.sd p { font-size: 12.5px; color: #888; line-height: 1.7; }
+
+/* ========== 비교과 ========== */
+.eg { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+
+.ec {
+  background: var(--card-bg); border-radius: 16px; padding: 28px 24px;
+  border: 1px solid var(--light-gray); text-align: center;
+}
+
+.ec .ei { font-size: 36px; margin-bottom: 14px; }
+.ec h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+.ec p { font-size: 12.5px; color: #777; line-height: 1.7; }
+
+/* ========== 평가 링 ========== */
+.ev { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin-bottom: 40px; }
+
+.evc {
+  background: var(--card-bg); border-radius: 16px; padding: 28px 20px;
+  text-align: center; border: 1px solid var(--light-gray);
+}
+
+.evr { width: 80px; height: 80px; margin: 0 auto 14px; position: relative; }
+.evr svg { transform: rotate(-90deg); }
+.evr .val {
+  position: absolute; inset: 0; display: flex; align-items: center;
+  justify-content: center; font-family: 'Noto Serif KR', serif;
+  font-size: 18px; font-weight: 700;
+}
+
+.evc h5 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.evc p { font-size: 11px; color: #999; }
+
+/* ========== 향후과제 ========== */
+.nl { display: flex; flex-direction: column; gap: 14px; }
+
+.ni {
+  background: var(--card-bg); border-radius: 14px; padding: 22px 24px;
+  border: 1px solid var(--light-gray); display: flex; align-items: flex-start; gap: 16px;
+}
+
+.nn {
+  width: 36px; height: 36px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; font-weight: 800; color: #fff; flex-shrink: 0;
+}
+
+.ni h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.ni p { font-size: 13px; color: #777; line-height: 1.7; }
+
+/* ========== DIVIDER ========== */
+.dv {
+  padding: 56px 24px; text-align: center;
+  background: linear-gradient(165deg, #1a1a2e 0%, #2d2b3a 100%); color: #fff;
+}
+
+.dv .label { color: var(--accent-light); }
+.dv .title { color: #fff; }
+.dv .desc { color: rgba(255,255,255,0.5); margin: 0 auto; }
+
+/* ========== FOOTER ========== */
+.footer {
+  text-align: center; padding: 40px 24px;
+  font-size: 12px; color: var(--warm-gray); border-top: 1px solid var(--light-gray);
+}
+
+@media (max-width: 640px) {
+  .glance { grid-template-columns: 1fr; }
+  .hero-stats { gap: 28px; }
+  .flow { flex-direction: column; }
+  .fs { border-radius: 14px !important; }
+  .fs:not(:last-child)::after { content: '↓'; right: 50%; transform: translateX(50%); top: auto; bottom: -12px; }
+  .ev { grid-template-columns: repeat(2, 1fr); }
+  .letter { padding: 28px 22px; }
+  .wrap { padding: 48px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="hero-badge">Quarterly Report</div>
+  <h1>송예린 학생<br><em>성장 리포트</em></h1>
+  <div class="hero-sub">경해여고 1학년 → 2학년 진급 · 2025.08 – 2026.03</div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-num">10+</div><div class="hero-stat-label">세특 완성 과목</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">30+</div><div class="hero-stat-label">수행평가 지원</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">8개월</div><div class="hero-stat-label">컨설팅 기간</div></div>
+  </div>
+</div>
+
+<!-- ===== 어머님께 요약 ===== -->
+<div class="wrap">
+  <div class="label">For Parents</div>
+  <div class="title">어머님께 드리는 요약</div>
+
+  <div class="letter">
+    <h3>💌 8개월간 예린이는 이렇게 성장했습니다</h3>
+    <p>예린이는 <span class="hl">"미디어가 사람들의 생각에 어떤 영향을 미치는가"</span>라는 질문을 1학년 내내 국어, 영어, 사회, 과학, 동아리 등 거의 모든 활동에 자연스럽게 연결시키며 본인만의 <span class="hl">일관된 학업 서사(스토리)</span>를 완성했습니다.</p>
+    <p>처음에는 수행평가 주제 선정에서 도움이 필요했지만, 시간이 갈수록 <span class="hl">스스로 아이디어를 먼저 제안</span>하는 수준으로 성장했습니다. 예를 들어 "국민은 공정한 언론을 원하면서 왜 편향된 콘텐츠를 소비하는가?"라는 주제는 예린이가 직접 낸 아이디어입니다.</p>
+    <p>학업 성적은 <span class="hl">최상위권을 안정적으로 유지</span>하고 있으며, 성적우수자 해외탐방(프랑스·영국)에도 선발되었습니다. 2학년에는 학생회 문화부장과 시사토론 동아리 부장을 맡아 리더십 역량을 한층 강화할 준비가 되어 있습니다.</p>
+    <p>진로 방향은 <span class="hl">언론홍보영상학부</span>를 중심으로, 최근에는 <span class="hl">인류학·영어영문학</span>까지 관심을 넓히고 있어 2학년에 걸쳐 자연스럽게 좁혀갈 예정입니다.</p>
+  </div>
+
+  <div class="title" style="font-size:22px; margin-bottom:24px;">📋 한눈에 보기</div>
+  <div class="glance">
+    <div class="gc"><div class="gc-e">📚</div><div><h3>생기부 — 전 과목 완성</h3><p>국어·영어·수학·사회·과학·한국사·체육·심리·진로·자율·동아리·행특까지 모든 영역을 하나의 이야기로 연결했습니다.</p></div></div>
+    <div class="gc"><div class="gc-e">🧠</div><div><h3>사고력 — 스스로 아이디어를 냅니다</h3><p>초반에는 함께 고민했으나, 후반부에는 예린이가 먼저 참신한 주제를 제안하는 수준으로 성장했습니다.</p></div></div>
+    <div class="gc"><div class="gc-e">🏆</div><div><h3>성적 — 최상위 유지</h3><p>전 과목 성취도 A 기반을 유지하고 있으며, 성적우수자 해외탐방 선발로 학업 역량을 입증했습니다.</p></div></div>
+    <div class="gc"><div class="gc-e">🎯</div><div><h3>진로 — 방향 확립 & 확장 중</h3><p>언론홍보영상학부를 축으로, 인류학·영문학까지 탐색 중. 2학년에서 자연스럽게 구체화합니다.</p></div></div>
+  </div>
+</div>
+
+<!-- ===== 서사 흐름도 ===== -->
+<div class="dv">
+  <div class="label">Story Flow</div>
+  <div class="title">생기부 핵심 서사 — 이런 흐름입니다</div>
+  <div class="desc">모든 과목의 활동이 하나의 이야기로 이어집니다</div>
+</div>
+
+<div class="wrap">
+  <p style="font-size:14px; color:#777; margin-bottom:24px; text-align:center;">
+    입학사정관이 예린이의 생기부를 읽었을 때 <strong>"이 학생은 정말 이 분야에 관심이 있구나"</strong>라고 느끼는 이유입니다.
+  </p>
+  <div class="flow">
+    <div class="fs"><div class="fe">🔍</div><h5>문제 발견</h5><p>"사람들은 왜<br>듣고 싶은 것만<br>듣는 걸까?"</p></div>
+    <div class="fs"><div class="fe">📊</div><h5>구조 분석</h5><p>확증편향<br>알고리즘 편향<br>미디어 프레이밍</p></div>
+    <div class="fs"><div class="fe">💡</div><h5>해결책 설계</h5><p>Cross-Check Player<br>소셜 OTT 플랫폼<br>넛지 시스템</p></div>
+    <div class="fs"><div class="fe">🤔</div><h5>철학적 성찰</h5><p>부버의 나-너 관계<br>콘텐츠 제작자의<br>사회적 책임</p></div>
+  </div>
+</div>
+
+<!-- ===== 로드맵 ===== -->
+<div class="wrap">
+  <div class="label">Roadmap</div>
+  <div class="title">진로 탐색 로드맵</div>
+  <div class="desc">지금 어디까지 왔고, 앞으로 어디로 가는지 보여드립니다.</div>
+
+  <div class="rm">
+    <div class="rs">
+      <div class="rl"><div class="ri" style="background:var(--sage-light);">🌱</div><div class="rline"></div></div>
+      <div class="rr">
+        <div class="rp" style="color:var(--sage);">1학년 1학기 (2025.03–07)</div>
+        <h4>관심 발견 — "알고리즘이 편향적이라고?"</h4>
+        <p>융합탐구에서 알고리즘 편향성을 처음 접하며 미디어에 대한 문제의식을 형성한 시기입니다.</p>
+        <span class="rb rb-d">✓ 완료</span>
+      </div>
+    </div>
+    <div class="rs">
+      <div class="rl"><div class="ri" style="background:#fef0ec;">🔥</div><div class="rline"></div></div>
+      <div class="rr">
+        <div class="rp" style="color:var(--accent);">1학년 2학기 (2025.08–2026.02)</div>
+        <h4>심화 탐구 — 문제를 넘어 해결책을 만들다</h4>
+        <p>Cross-Check Player, 소셜 OTT 플랫폼 등 <strong>구체적 해결책을 직접 설계</strong>. 전 과목 세특을 하나의 서사로 완성한 핵심 시기입니다.</p>
+        <span class="rb rb-d">✓ 완료</span>
+      </div>
+    </div>
+    <div class="rs">
+      <div class="rl"><div class="ri" style="background:var(--gold-light);">⚡</div><div class="rline"></div></div>
+      <div class="rr">
+        <div class="rp" style="color:var(--gold);">2학년 1학기 (2026.03–07) ← 현재</div>
+        <h4>확장과 융합 — 철학·인류학과 결합</h4>
+        <p>윤리와사상에서 하이데거·부버를 필터버블과 연결하는 발표 진행 중. 동아리 부장으로서 체계적 운영 중입니다.</p>
+        <span class="rb rb-n">◉ 진행 중</span>
+      </div>
+    </div>
+    <div class="rs">
+      <div class="rl"><div class="ri" style="background:var(--blue-light);">🎯</div></div>
+      <div class="rr">
+        <div class="rp" style="color:var(--blue);">2학년 2학기 이후</div>
+        <h4>차별화 완성 — 나만의 관점 증명</h4>
+        <p>현대사회와윤리에서 미디어 윤리 탐구, 문화부장 활동으로 공동체 역량을 실증하고 진로를 구체화합니다.</p>
+        <span class="rb rb-p">○ 예정</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 교과별 세특 ===== -->
+<div class="wrap">
+  <div class="label">Subjects</div>
+  <div class="title">교과별 생기부 핵심 내용</div>
+  <div class="desc">각 과목에서 예린이가 어떤 탐구를 했는지 한눈에 볼 수 있습니다.</div>
+
+  <div class="sc">
+    <div class="si">
+      <div class="sb" style="background:linear-gradient(135deg,#c45b3f,#d97b64);">국어</div>
+      <div class="sd"><div class="sk">💬 미디어 프레이밍 → 신조어 6개 창작</div><p>1학기: 보도사진 프레이밍 분석 / 2학기: '알고라이팅', '공감모독' 등 사회 트렌드를 반영한 <strong>신조어 직접 창작</strong></p></div>
+    </div>
+    <div class="si">
+      <div class="sb" style="background:linear-gradient(135deg,#4a6fa5,#6b8fc5);">영어</div>
+      <div class="sd"><div class="sk">🌐 AI 영문기사 → 교차검증 플레이어 기획</div><p>1학기: AI와 영화산업 영문 기사 분석 / 2학기: 확증편향 해결용 <strong>'Cross-Check Player'</strong> 기획서 영어로 작성</p></div>
+    </div>
+    <div class="si">
+      <div class="sb" style="background:linear-gradient(135deg,#7b6bb5,#9b8bd5);">수학</div>
+      <div class="sd"><div class="sk">🎬 OTT 알고리즘 → 크로마키 오류를 명제로 분석</div><p>1학기: 추천 알고리즘의 수학적 구조 / 2학기: 방송 크로마키 오류를 <strong>명제·반례·조건 강화</strong>로 분석, 시뮬레이터 제작</p></div>
+    </div>
+    <div class="si">
+      <div class="sb" style="background:linear-gradient(135deg,#5a8a60,#7aaa80);">사회</div>
+      <div class="sd"><div class="sk">📰 총균쇠 비판 → 디지털 성범죄 보도의 역설</div><p>1학기: 남북한 사례로 지리결정론 한계 논증 / 2학기: 딥페이크 보도가 <strong>2차 피해를 유발하는 구조</strong>까지 분석</p></div>
+    </div>
+    <div class="si">
+      <div class="sb" style="background:linear-gradient(135deg,#b8860b,#d4a84b);">한국사</div>
+      <div class="sd"><div class="sk">🎞️ 모의재판 → 스크린 속 식민 지배</div><p>1학기: 장희빈 모의재판, TV드라마 역사왜곡 / 2학기: 일제 <strong>프로파간다 영화의 삼단 구조</strong>(정책-산업-콘텐츠) 분석</p></div>
+    </div>
+    <div class="si">
+      <div class="sb" style="background:linear-gradient(135deg,#2a9d8f,#4dbdaf);">과학</div>
+      <div class="sd"><div class="sk">🌸 기후 데이터 → 신소재 탐색 프로그램</div><p>1학기: 매화 개화 시기 변화를 추세선으로 분석 / 2학기: 빅데이터 기반 <strong>'메탈 파인더'</strong> 프로그램 기획</p></div>
+    </div>
+    <div class="si">
+      <div class="sb" style="background:linear-gradient(135deg,#e07a5f,#f09a7f);">체육</div>
+      <div class="sd"><div class="sk">🏃 러닝크루 분석 → 반두라 자기효능감</div><p>1학기: 러닝크루 확산의 사회심리적 배경 / 2학기: <strong>자기효능감 이론</strong>을 운동 지속에 적용, 모둠 창작 춤 협업</p></div>
+    </div>
+    <div class="si">
+      <div class="sb" style="background:linear-gradient(135deg,#e9967a,#f0b8a0);">심리</div>
+      <div class="sd"><div class="sk">🤝 사회인지이론 → '말없는 다정함' 제안</div><p>반두라 모델링 → MBTI 소통 차이 분석 → <strong>'말없는 다정함'</strong>이라는 독창적 갈등 해소 개념을 제안</p></div>
+    </div>
+    <div class="si">
+      <div class="sb" style="background:linear-gradient(135deg,#6c757d,#8a939c);">진로</div>
+      <div class="sd"><div class="sk">📺 소셜 OTT · 블라인드 상영 · 경의사상</div><p>소셜 OTT 플랫폼 기획, 블라인드 상영 시스템 제안, <strong>경의사상 기반 콘텐츠 제작자 윤리</strong> 탐구</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 비교과 ===== -->
+<div class="wrap">
+  <div class="label">Activities</div>
+  <div class="title">비교과 활동 & 리더십</div>
+  <div class="eg">
+    <div class="ec"><div class="ei">🎤</div><h4>시사토론 동아리 부장</h4><p>월별 키워드→토론→카드뉴스→잡지 발행의 <strong>체계적 연간 운영계획</strong>을 수립 완료</p></div>
+    <div class="ec"><div class="ei">🏫</div><h4>학생회 문화부장</h4><p>경쟁을 뚫고 당선. 학교 행사 기획 총괄로 <strong>메시지 전달 역량</strong>을 실천하는 무대 확보</p></div>
+    <div class="ec"><div class="ei">🌍</div><h4>유럽 탐방 선발</h4><p>성적우수자로 프랑스·영국 10일 탐방. <strong>비언어적 미디어 체험</strong> 소재 확보</p></div>
+    <div class="ec"><div class="ei">📖</div><h4>심화 독서</h4><p>팩트풀니스, 경량문명, 다정함이 인격이다 등 완료. 2학년 『타인의 고통』, 『일리아스』 등 예정</p></div>
+  </div>
+</div>
+
+<!-- ===== 성장 평가 ===== -->
+<div class="dv">
+  <div class="label">Evaluation</div>
+  <div class="title">종합 성장 평가</div>
+  <div class="desc">5개 핵심 역량 기준으로 예린이의 현재 수준을 평가합니다</div>
+</div>
+
+<div class="wrap">
+  <div class="ev">
+    <div class="evc">
+      <div class="evr">
+        <svg width="80" height="80" viewBox="0 0 80 80">
+          <circle cx="40" cy="40" r="34" fill="none" stroke="#eee" stroke-width="6"/>
+          <circle cx="40" cy="40" r="34" fill="none" stroke="var(--sage)" stroke-width="6" style="stroke-dasharray:213.6;stroke-dashoffset:10.7;" stroke-linecap="round"/>
+        </svg>
+        <div class="val" style="color:var(--sage);">A+</div>
+      </div>
+      <h5>학업 성취</h5>
+      <p>최상위권 안정 유지</p>
+    </div>
+    <div class="evc">
+      <div class="evr">
+        <svg width="80" height="80" viewBox="0 0 80 80">
+          <circle cx="40" cy="40" r="34" fill="none" stroke="#eee" stroke-width="6"/>
+          <circle cx="40" cy="40" r="34" fill="none" stroke="var(--accent)" stroke-width="6" style="stroke-dasharray:213.6;stroke-dashoffset:17.1;" stroke-linecap="round"/>
+        </svg>
+        <div class="val" style="color:var(--accent);">92</div>
+      </div>
+      <h5>진로 일관성</h5>
+      <p>전 과목 서사 연결</p>
+    </div>
+    <div class="evc">
+      <div class="evr">
+        <svg width="80" height="80" viewBox="0 0 80 80">
+          <circle cx="40" cy="40" r="34" fill="none" stroke="#eee" stroke-width="6"/>
+          <circle cx="40" cy="40" r="34" fill="none" stroke="var(--blue)" stroke-width="6" style="stroke-dasharray:213.6;stroke-dashoffset:21.4;" stroke-linecap="round"/>
+        </svg>
+        <div class="val" style="color:var(--blue);">90</div>
+      </div>
+      <h5>탐구 깊이</h5>
+      <p>논리적·창의적 분석</p>
+    </div>
+    <div class="evc">
+      <div class="evr">
+        <svg width="80" height="80" viewBox="0 0 80 80">
+          <circle cx="40" cy="40" r="34" fill="none" stroke="#eee" stroke-width="6"/>
+          <circle cx="40" cy="40" r="34" fill="none" stroke="var(--gold)" stroke-width="6" style="stroke-dasharray:213.6;stroke-dashoffset:19.2;" stroke-linecap="round"/>
+        </svg>
+        <div class="val" style="color:var(--gold);">91</div>
+      </div>
+      <h5>자기주도성</h5>
+      <p>독립적 아이디어 제안</p>
+    </div>
+    <div class="evc">
+      <div class="evr">
+        <svg width="80" height="80" viewBox="0 0 80 80">
+          <circle cx="40" cy="40" r="34" fill="none" stroke="#eee" stroke-width="6"/>
+          <circle cx="40" cy="40" r="34" fill="none" stroke="#8b6bb5" stroke-width="6" style="stroke-dasharray:213.6;stroke-dashoffset:42.7;" stroke-linecap="round"/>
+        </svg>
+        <div class="val" style="color:#8b6bb5;">80</div>
+      </div>
+      <h5>리더십</h5>
+      <p>2학년 본격 발휘 예정</p>
+    </div>
+  </div>
+
+  <div class="letter" style="border-left:4px solid var(--accent); background:linear-gradient(135deg,#faf5f0,#f5efe8);">
+    <h3>📝 컨설턴트 종합 의견</h3>
+    <p>예린이의 가장 큰 강점은 <span class="hl">활동 하나하나가 끝이 아니라 다음 활동의 출발점</span>이 된다는 점입니다. '확증편향 인식 → 알고리즘 분석 → 해결책 설계 → 철학적 성찰'로 이어지는 사고의 깊이가 1학년 수준을 넘어서고 있습니다.</p>
+    <p>수행평가를 "해야 할 것"이 아니라 <span class="hl">"탐구하고 싶은 것"으로 받아들이는 태도</span>가 인상적이며, 이런 자세가 대입 학생부종합전형에서 가장 큰 경쟁력이 됩니다.</p>
+    <p>2학년에서는 리더십 활동(문화부장·동아리 부장)으로 <span class="hl">공동체 역량</span>을 보여주고, 독서를 통해 인류학·철학의 학문적 깊이를 더하면 매우 강력한 포트폴리오가 완성됩니다.</p>
+  </div>
+</div>
+
+<!-- ===== 향후 과제 ===== -->
+<div class="wrap">
+  <div class="label">Next Steps</div>
+  <div class="title">2학년 핵심 과제 4가지</div>
+  <div class="desc">1학년 기반 위에 깊이와 차별성을 더하는 것이 목표입니다.</div>
+  <div class="nl">
+    <div class="ni"><div class="nn" style="background:var(--accent);">1</div><div><h4>윤리와사상 — 철학적 심화</h4><p>하이데거→필터버블→부버의 나-너 관계를 연결하는 발표로 <strong>미디어 탐구를 철학적 차원</strong>으로 끌어올립니다.</p></div></div>
+    <div class="ni"><div class="nn" style="background:var(--sage);">2</div><div><h4>시사토론 동아리 — 리더십 증명</h4><p>부장으로서 월별 키워드→토론→카드뉴스→잡지 발행의 <strong>체계적 운영을 실행</strong>합니다.</p></div></div>
+    <div class="ni"><div class="nn" style="background:var(--blue);">3</div><div><h4>진로 독서 — 학문적 기반 강화</h4><p>『타인의 고통』, 『이미지의 삶과 죽음』, 『일리아스』 등으로 <strong>인류학·미디어의 학문적 깊이</strong>를 다집니다.</p></div></div>
+    <div class="ni"><div class="nn" style="background:var(--gold);">4</div><div><h4>학생회 문화부장 — 공동체 역량</h4><p>행사 기획·운영으로 <strong>"메시지를 어떻게 전달할 것인가"</strong>라는 진로 역량을 실천합니다.</p></div></div>
+  </div>
+</div>
+
+<div class="footer">
+  <p style="margin-bottom:6px; font-weight:600; color:var(--ink);">G1 Education Consulting</p>
+  <p>본 리포트는 2025년 8월 ~ 2026년 3월 컨설팅 내용을 기반으로 작성되었습니다.</p>
+  <p>리포트 작성일: 2026년 3월 31일</p>
+</div>
+
+</body>
+</html>
