@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026학년도 페이스메이커 신규등록 안내 | 후츠파에듀케이션</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2d3561;
+            --primary-light: #3d4571;
+            --accent: #d4af37;
+            --accent-light: #e8c85a;
+            --background: #fafaf8;
+            --card-bg: #ffffff;
+            --text-primary: #2d3561;
+            --text-secondary: #5a5a6e;
+            --text-muted: #8a8a9a;
+            --border-light: #e8e8ec;
+            --shadow: 0 4px 20px rgba(45, 53, 97, 0.08);
+            --shadow-hover: 0 8px 30px rgba(45, 53, 97, 0.12);
+            --gold-tint: #fdf9f0;
+            --cream-tint: #fffcf5;
+            --danger: #e85a4f;
+            --success: #4a9d7c;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body {
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-size-adjust: 100%;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            padding: 2.5rem 1.25rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        .header-content { position: relative; z-index: 1; }
+        .brand { color: white; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.1em; margin-bottom: 0.75rem; opacity: 0.9; }
+        .header-title { color: white; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.4; word-break: keep-all; }
+        .personalized-badge {
+            display: inline-block; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            color: var(--primary); padding: 0.5rem 1.25rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem;
+            margin-bottom: 0.75rem; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        .header-note { color: rgba(255, 255, 255, 0.7); font-size: 0.8rem; font-weight: 300; }
+
+        .main-content { max-width: 720px; margin: 0 auto; padding: 1rem; }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg); border-radius: 14px; padding: 1.25rem;
+            margin-bottom: 1rem; box-shadow: var(--shadow); transition: box-shadow 0.3s ease;
+        }
+        .card-header { display: flex; align-items: center; gap: 0.625rem; margin-bottom: 1rem; }
+        .card-icon {
+            width: 40px; height: 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            color: white; flex-shrink: 0;
+        }
+        .card-icon svg { width: 20px; height: 20px; }
+        .card-icon.gold { background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%); color: var(--primary); }
+        .card-title { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); word-break: keep-all; }
+        .card-content p { color: var(--text-secondary); margin-bottom: 0.875rem; font-size: 0.925rem; }
+        .card-content p:last-child { margin-bottom: 0; }
+
+        .welcome-card { background: linear-gradient(135deg, var(--cream-tint) 0%, var(--card-bg) 100%); border: 1px solid rgba(212, 175, 55, 0.2); }
+
+        /* Achievement Cards */
+        .achievement-card { padding: 1rem; border-radius: 10px; margin-bottom: 0.875rem; }
+        .achievement-header { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.75rem; }
+        .achievement-badge { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700; width: fit-content; }
+        .achievement-title { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); }
+        .achievement-list { margin: 0; padding-left: 1.1rem; font-size: 0.85rem; line-height: 1.7; }
+        .achievement-list li { margin-bottom: 0.375rem; color: var(--text-secondary); }
+        .achievement-note { font-size: 0.75rem; color: var(--text-muted); display: block; margin-top: 0.125rem; }
+
+        .divider { height: 1px; background: var(--border-light); margin: 1rem 0; }
+
+        /* Communication Section */
+        .comm-item { display: flex; gap: 0.75rem; padding: 0.875rem; background: var(--background); border-radius: 10px; margin-bottom: 0.625rem; }
+        .comm-icon { width: 36px; height: 36px; background: var(--primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0; }
+        .comm-icon svg { width: 18px; height: 18px; }
+        .comm-content h4 { font-weight: 600; color: var(--text-primary); margin-bottom: 0.375rem; font-size: 0.925rem; }
+        .comm-content ul { list-style: none; }
+        .comm-content li { color: var(--text-secondary); font-size: 0.85rem; padding-left: 0.875rem; position: relative; margin-bottom: 0.25rem; }
+        .comm-content li::before { content: '•'; position: absolute; left: 0; color: var(--accent); }
+        .subtle-note { font-size: 0.8rem; color: var(--text-muted); padding: 0.625rem; background: var(--background); border-radius: 6px; border-left: 3px solid var(--accent); margin-top: 0.5rem; }
+
+        /* Timeline */
+        .timeline { position: relative; padding-left: 1.75rem; }
+        .timeline::before { content: ''; position: absolute; left: 9px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--accent) 0%, var(--primary) 100%); }
+        .timeline-step { position: relative; padding-bottom: 1.25rem; }
+        .timeline-step:last-child { padding-bottom: 0; }
+        .timeline-number { position: absolute; left: -1.75rem; width: 20px; height: 20px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; color: var(--primary); box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4); z-index: 2; }
+        .timeline-content h4 { font-weight: 600; color: var(--text-primary); margin-bottom: 0.25rem; font-size: 0.95rem; }
+        .timeline-content p { color: var(--text-secondary); font-size: 0.85rem; }
+        .timeline-detail { background: var(--gold-tint); padding: 0.625rem; border-radius: 6px; margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-secondary); line-height: 1.6; }
+
+        /* Service List */
+        .service-card { background: linear-gradient(135deg, #f8f9fa 0%, var(--card-bg) 100%); border: 1px solid var(--border-light); }
+        .service-list { list-style: none; }
+        .service-list li { display: flex; align-items: flex-start; gap: 0.625rem; padding: 0.5rem 0; color: var(--text-secondary); font-size: 0.9rem; }
+        .service-list li svg { color: var(--success); flex-shrink: 0; margin-top: 2px; width: 16px; height: 16px; }
+        .info-note { display: flex; gap: 0.625rem; padding: 0.875rem; background: rgba(45, 53, 97, 0.05); border-radius: 8px; font-size: 0.825rem; color: var(--text-muted); }
+        .info-note svg { flex-shrink: 0; color: var(--primary); opacity: 0.6; width: 16px; height: 16px; margin-top: 2px; }
+
+        /* Notion Guide */
+        .feature-list { list-style: none; margin-bottom: 1.25rem; }
+        .feature-list li { display: flex; align-items: center; gap: 0.625rem; padding: 0.375rem 0; color: var(--text-secondary); font-size: 0.9rem; }
+        .feature-list li svg { color: var(--accent); width: 16px; height: 16px; }
+        .button-group { display: flex; flex-direction: column; gap: 0.625rem; }
+        .btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.875rem 1.25rem; border-radius: 10px; font-size: 0.925rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease; cursor: pointer; border: none; -webkit-tap-highlight-color: transparent; }
+        .btn svg { width: 18px; height: 18px; }
+        .btn-primary { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); color: white; box-shadow: 0 4px 15px rgba(45, 53, 97, 0.3); }
+        .btn-secondary { background: transparent; color: var(--accent); border: 2px solid var(--accent); }
+
+        /* Payment Card */
+        .payment-card { background: linear-gradient(135deg, var(--cream-tint) 0%, var(--gold-tint) 100%); border: 2px solid var(--accent); position: relative; }
+        .payment-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%); border-radius: 14px 14px 0 0; }
+        .price-display { text-align: center; padding: 0.75rem 0; }
+        .price-label { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.375rem; }
+        .final-price { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+
+        .price-calculation { background: white; border: 1px solid var(--border-light); border-radius: 10px; padding: 0.875rem 1rem; margin: 0.75rem 0 0; text-align: center; }
+        .price-calculation-title { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 500; }
+        .price-calculation-formula { font-size: 0.9rem; color: var(--text-primary); font-weight: 600; line-height: 1.6; }
+        .price-calculation-formula .op { color: var(--accent); margin: 0 0.25rem; font-weight: 700; }
+        .price-calculation-detail { font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.375rem; }
+
+        .payment-info-box { background: white; border: 1px solid var(--border-light); border-radius: 10px; padding: 1rem; margin: 1rem 0; }
+        .payment-info-box h4 { font-size: 0.9rem; color: var(--primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+        .payment-info-box p { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; line-height: 1.6; }
+        .payment-info-box p:last-child { margin-bottom: 0; }
+
+        /* Refund Accordion */
+        .refund-details { margin-top: 1.25rem; border-top: 1px solid var(--border-light); padding-top: 0.875rem; }
+        .refund-summary { cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-weight: 600; color: var(--text-secondary); list-style: none; font-size: 0.875rem; padding: 0.25rem 0; }
+        .refund-summary::-webkit-details-marker { display: none; }
+        .refund-content { margin-top: 0.875rem; font-size: 0.8rem; color: var(--text-secondary); background: white; padding: 0.875rem; border-radius: 8px; border: 1px solid var(--border-light); }
+        .refund-content h5 { background: var(--gold-tint); color: var(--primary); padding: 0.5rem 0.75rem; border-radius: 6px; font-size: 0.85rem; margin: 1rem 0 0.5rem; font-weight: 700; }
+        .refund-content h5:first-of-type { margin-top: 0.5rem; }
+        .refund-content p.section-note { font-size: 0.75rem; color: var(--text-muted); margin: 0.25rem 0 0.5rem; }
+        .refund-table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+        .refund-table th, .refund-table td { border: 1px solid var(--border-light); padding: 0.5rem; text-align: left; font-size: 0.72rem; vertical-align: top; line-height: 1.5; }
+        .refund-table th { background: #f8f9fa; color: var(--primary); font-weight: 700; }
+        .refund-table .refund-amount { color: var(--danger); font-weight: 600; }
+        .refund-notice { background: #f8f9fa; border-left: 3px solid var(--primary); padding: 0.625rem 0.75rem; border-radius: 0 6px 6px 0; margin-top: 0.875rem; font-size: 0.72rem; line-height: 1.6; }
+        .refund-notice strong { color: var(--primary); }
+
+        /* Agreement & Signature */
+        .agreement-box { background: #fff; padding: 0.875rem; border-radius: 8px; margin-bottom: 0.875rem; border: 1px solid var(--border-light); display: flex; align-items: flex-start; gap: 0.625rem; }
+        .agreement-box input[type="checkbox"] { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--primary); cursor: pointer; flex-shrink: 0; }
+        .agreement-label { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; cursor: pointer; }
+        .signer-info { display: grid; gap: 0.875rem; margin-bottom: 1.25rem; }
+        .input-group { display: flex; flex-direction: column; gap: 0.375rem; }
+        .input-label { font-size: 0.85rem; font-weight: 600; color: var(--primary); }
+        .input-field { padding: 0.75rem 0.875rem; border: 2px solid var(--border-light); border-radius: 8px; font-size: 1rem; font-family: inherit; transition: border-color 0.3s, box-shadow 0.3s; background: #fff; -webkit-appearance: none; appearance: none; }
+        .input-field:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15); }
+        .input-field::placeholder { color: var(--text-muted); }
+        .signature-section { margin-top: 1.25rem; }
+        .signature-label { display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--primary); font-size: 0.9rem; }
+        .canvas-container { position: relative; width: 100%; height: 160px; background: #fff; border: 2px dashed var(--border-light); border-radius: 10px; overflow: hidden; touch-action: none; -webkit-user-select: none; user-select: none; }
+        .canvas-container.signed { border-color: var(--success); border-style: solid; }
+        canvas { width: 100%; height: 100%; display: block; }
+        .signature-placeholder { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: var(--text-muted); font-size: 0.85rem; pointer-events: none; text-align: center; }
+        .signature-actions { display: flex; justify-content: space-between; margin-top: 0.625rem; gap: 0.625rem; }
+        .btn-clear { padding: 0.5rem 0.875rem; border: 1px solid var(--text-muted); background: white; border-radius: 8px; color: var(--text-secondary); cursor: pointer; font-size: 0.85rem; -webkit-tap-highlight-color: transparent; }
+        .btn-submit-sig { flex: 1; padding: 0.75rem; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background 0.3s; font-size: 0.9rem; -webkit-tap-highlight-color: transparent; }
+        .btn-submit-sig:disabled { background: var(--text-muted); cursor: not-allowed; opacity: 0.7; }
+
+        /* Closing Card */
+        .closing-card { background: linear-gradient(135deg, var(--gold-tint) 0%, var(--cream-tint) 100%); text-align: center; border: 1px solid rgba(212, 175, 55, 0.2); }
+        .closing-icon { width: 52px; height: 52px; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: var(--primary); }
+        .closing-icon svg { width: 26px; height: 26px; }
+        .closing-message { font-size: 1rem; color: var(--text-secondary); margin-bottom: 1.25rem; line-height: 1.8; }
+        .closing-signature { color: var(--text-muted); margin-bottom: 0.375rem; font-size: 0.9rem; }
+        .closing-signoff { font-weight: 600; color: var(--text-primary); font-size: 0.95rem; }
+
+        /* Footer */
+        .footer { background: var(--primary); padding: 1.75rem 1.25rem; margin-top: 0.875rem; }
+        .footer-content { max-width: 720px; margin: 0 auto; text-align: center; }
+        .footer-title { color: white; font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .footer-note { color: rgba(255, 255, 255, 0.7); font-size: 0.85rem; margin-bottom: 1.25rem; }
+        .phone-btn { display: flex; align-items: center; justify-content: center; gap: 0.625rem; width: 100%; padding: 1rem 1.25rem; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%); color: var(--primary); border: none; border-radius: 12px; font-size: 1.125rem; font-weight: 700; text-decoration: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4); margin-bottom: 0.875rem; -webkit-tap-highlight-color: transparent; }
+        .phone-btn svg { width: 22px; height: 22px; }
+        .footer-sub-note { color: rgba(255, 255, 255, 0.6); font-size: 0.8rem; }
+
+        /* Toast */
+        .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--primary); color: white; padding: 0.875rem 1.25rem; border-radius: 10px; font-weight: 500; font-size: 0.9rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); opacity: 0; transition: all 0.3s ease; z-index: 1000; max-width: calc(100% - 40px); text-align: center; }
+        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+        .icon { display: inline-flex; align-items: center; justify-content: center; }
+
+        /* HCB-DNA Button */
+        .hcb-dna-btn {
+            display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+            width: 100%; padding: 1.25rem 1.5rem;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ff6b35 100%);
+            background-size: 200% 200%; color: white; font-size: 1.1rem; font-weight: 700;
+            text-decoration: none; border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+            transition: all 0.3s ease;
+            animation: gradientShift 3s ease infinite, pulse 2s ease-in-out infinite;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hcb-dna-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5); }
+        .hcb-dna-btn-icon { display: flex; align-items: center; justify-content: center; }
+        .hcb-dna-btn-text { flex: 1; text-align: center; }
+        .hcb-dna-btn-arrow { font-size: 1.25rem; animation: bounceRight 1s ease-in-out infinite; }
+        @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        @keyframes pulse { 0%, 100% { box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4); } 50% { box-shadow: 0 6px 30px rgba(255, 107, 53, 0.6); } }
+        @keyframes bounceRight { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+
+        @media (min-width: 480px) {
+            .header { padding: 3.5rem 2rem; }
+            .header-title { font-size: 1.875rem; }
+            .brand { font-size: 1rem; }
+            .personalized-badge { font-size: 1rem; padding: 0.6rem 1.5rem; }
+            .header-note { font-size: 0.875rem; }
+            .main-content { padding: 1.5rem; }
+            .card { padding: 1.75rem; margin-bottom: 1.25rem; border-radius: 16px; }
+            .card-icon { width: 44px; height: 44px; border-radius: 12px; }
+            .card-icon svg { width: 22px; height: 22px; }
+            .card-title { font-size: 1.25rem; }
+            .card-content p { font-size: 0.95rem; }
+            .achievement-header { flex-direction: row; align-items: center; gap: 0.625rem; }
+            .comm-icon { width: 40px; height: 40px; }
+            .comm-content h4 { font-size: 0.95rem; }
+            .comm-content li { font-size: 0.9rem; }
+            .timeline { padding-left: 2rem; }
+            .timeline-number { left: -2rem; width: 24px; height: 24px; font-size: 0.75rem; }
+            .timeline-content h4 { font-size: 1rem; }
+            .timeline-content p { font-size: 0.9rem; }
+            .timeline-detail { font-size: 0.85rem; padding: 0.75rem; }
+            .button-group { flex-direction: row; }
+            .btn { flex: 1; padding: 1rem 1.5rem; font-size: 1rem; }
+            .signer-info { grid-template-columns: 1fr 1fr; }
+            .canvas-container { height: 180px; }
+            .final-price { font-size: 1.5rem; }
+            .closing-icon { width: 60px; height: 60px; }
+            .closing-icon svg { width: 30px; height: 30px; }
+            .closing-message { font-size: 1.1rem; }
+            .footer { padding: 2rem 1.5rem; }
+            .phone-btn { font-size: 1.25rem; padding: 1.25rem 1.5rem; }
+        }
+        @media (min-width: 640px) {
+            .header { padding: 4rem 2rem; }
+            .header-title { font-size: 2.125rem; }
+            .main-content { padding: 2rem; }
+            .card { padding: 2rem; }
+            .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(45, 53, 97, 0.4); }
+            .btn-secondary:hover { background: var(--gold-tint); transform: translateY(-2px); }
+            .phone-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5); }
+        }
+        @media (min-width: 768px) {
+            .header-title { font-size: 2.25rem; }
+            .card-title { font-size: 1.35rem; }
+            .refund-table th, .refund-table td { font-size: 0.78rem; padding: 0.625rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="brand">후츠파에듀케이션</div>
+            <h1 class="header-title">2026학년도 페이스메이커<br>신규등록 안내</h1>
+            <div class="personalized-badge">For. 조민서 학생 & 학부모님</div>
+            <p class="header-note">본 페이지는 민서를 위해 개별 제작되었습니다</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Welcome Message Card -->
+        <section class="card welcome-card">
+            <div class="card-header">
+                <div class="card-icon gold">
+                    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                </div>
+                <h2 class="card-title">민서 학부모님께</h2>
+            </div>
+            <div class="card-content">
+                <p>안녕하십니까, 후츠파에듀케이션 대표 송지원입니다.</p>
+                <p>지난 사전상담을 통해 민서와 만나뵐 수 있어 감사했습니다. 짧은 시간이었지만 민서의 가능성과 진솔한 태도가 인상 깊었고, <strong>이제 페이스메이커 정규 과정을 통해 본격적인 입시 여정을 함께 시작할 수 있기를 희망합니다.</strong></p>
+                <p>저희 후츠파에듀케이션은 <strong>'무엇이 되고 싶은가'</strong>보다 <strong>'나는 누구인가'</strong>를 먼저 탐색하는 것이 진정한 입시의 출발점이라 믿습니다. 민서 스스로가 자신의 강점과 가능성을 발견하고, 그것을 학교생활 속에서 하나의 뚜렷한 브랜드로 만들어갈 수 있도록 함께하겠습니다.</p>
+            </div>
+        </section>
+
+        <!-- Achievements Card -->
+        <section class="card" style="background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%); border: 1px solid var(--border-light);">
+            <div class="card-header">
+                <div class="card-icon">
+                    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                </div>
+                <h2 class="card-title">2026학년도 입시 실적</h2>
+            </div>
+            <div class="card-content">
+                <p style="margin-bottom: 1.25rem;">저희 후츠파에듀케이션은 2026학년도 입시에서도 페이스메이커 졸업생들이 좋은 결과를 거둘 수 있었습니다.</p>
+                
+                <div class="achievement-card" style="background: var(--gold-tint); border: 1px solid rgba(212, 175, 55, 0.3);">
+                    <div class="achievement-header">
+                        <span class="achievement-badge" style="background: var(--accent); color: var(--primary);">동명고</span>
+                        <span class="achievement-title">김성욱 학생 · 내신 1등급 후반</span>
+                    </div>
+                    <ul class="achievement-list">
+                        <li><strong>서울대학교</strong> 일반전형 인류학과 최종합격</li>
+                        <li><strong>연세대학교</strong> 활동우수형 문화인류학과 최종합격</li>
+                        <li><strong>성균관대학교</strong> 탐구형 사회학과 최종합격</li>
+                        <li><strong>고려대학교</strong> 계열적합형 사회학과 서류통과<br>
+                            <span class="achievement-note">(자사고·특목고 위주 전형에서의 쾌거)</span></li>
+                    </ul>
+                </div>
+
+                <div class="achievement-card" style="background: rgba(45, 53, 97, 0.05); border: 1px solid rgba(45, 53, 97, 0.15);">
+                    <div class="achievement-header">
+                        <span class="achievement-badge" style="background: var(--primary); color: white;">진양고</span>
+                        <span class="achievement-title">석현우 학생 · 의약학 계열</span>
+                    </div>
+                    <ul class="achievement-list">
+                        <li><strong>성균관대학교</strong> 의예과 서류통과<br>
+                            <span class="achievement-note">(지방 일반고에서 합격하기 힘든 성과)</span></li>
+                        <li><strong>KAIST</strong> 최종합격</li>
+                        <li><strong>울산대학교·부산대학교·경상대학교</strong> 의예과 최종합격</li>
+                    </ul>
+                </div>
+
+                <div class="achievement-card" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 1px solid rgba(74, 157, 124, 0.3);">
+                    <div class="achievement-header">
+                        <span class="achievement-badge" style="background: var(--success); color: white;">거창대성고</span>
+                        <span class="achievement-title">이창민 학생 · 내신 2등급대</span>
+                    </div>
+                    <ul class="achievement-list">
+                        <li><strong>성균관대학교</strong> 약학과 최종합격<br>
+                            <span class="achievement-note">(내신 2등급대에도 불구하고 이룬 성과)</span></li>
+                    </ul>
+                </div>
+
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">
+                    이러한 결과는 내신 등급만으로는 설명할 수 없는, <strong>학생 개인의 브랜딩과 깊이 있는 탐구 활동</strong>이 대학 평가에서 얼마나 중요한지를 보여줍니다. 민서도 자신만의 성공 스토리를 써나갈 수 있도록 최선을 다해 함께하겠습니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- Consulting Team Card -->
+        <section class="card">
+            <div class="card-header">
+                <div class="card-icon">
+                    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h2 class="card-title">민서의 입시 레이스를 함께할 전담 팀</h2>
+            </div>
+            <div class="card-content">
+                <div style="background: #f8f9fa; border: 1px solid var(--border-light); border-radius: 10px; padding: 1rem; margin-bottom: 0.75rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                        <div style="width: 44px; height: 44px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div>
+                            <strong style="font-size: 1rem; color: var(--primary);">송지원 대표</strong>
+                            <span style="background: var(--primary); color: white; padding: 0.15rem 0.5rem; border-radius: 20px; font-size: 0.7rem; font-weight: 700; margin-left: 0.5rem;">총괄 디렉팅</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0; padding-left: 3.25rem;">
+                        입시 전략 수립 및 전체 방향성 총괄
+                    </p>
+                </div>
+
+                <div style="background: var(--gold-tint); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                        <div style="width: 44px; height: 44px; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div>
+                            <strong style="font-size: 1rem; color: var(--primary);">김영경 컨설턴트</strong>
+                            <span style="background: var(--accent); color: var(--primary); padding: 0.15rem 0.5rem; border-radius: 20px; font-size: 0.7rem; font-weight: 700; margin-left: 0.5rem;">전담 멘토</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0; padding-left: 3.25rem;">
+                        학생·학부모님과의 상시 소통 창구
+                    </p>
+                </div>
+                
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.875rem;"><strong>컨설턴트 팀</strong> — 다각적 분석 및 전문 피드백</p>
+                
+                <div style="display: grid; gap: 0.75rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 8px;">
+                        <div style="width: 36px; height: 36px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div>
+                            <strong style="font-size: 0.9rem; color: var(--text-primary);">김영경 컨설턴트</strong>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); margin-left: 0.375rem;">국어교육 전공</span>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0.125rem 0 0 0;">국어 교과 검토 · 생기부 기록 구조 전문</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 8px;">
+                        <div style="width: 36px; height: 36px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div>
+                            <strong style="font-size: 0.9rem; color: var(--text-primary);">신욱희 컨설턴트</strong>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); margin-left: 0.375rem;">수학교육 전공</span>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0.125rem 0 0 0;">수학 교과 검토 · 기획 검토 전문</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; background: #f8f9fa; border-radius: 8px;">
+                        <div style="width: 36px; height: 36px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div>
+                            <strong style="font-size: 0.9rem; color: var(--text-primary);">양민식 컨설턴트</strong>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); margin-left: 0.375rem;">철학 전공</span>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0.125rem 0 0 0;">사회 교과 검토 · 브랜딩 기획 전문</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mentor Communication Card -->
+        <section class="card">
+            <div class="card-header">
+                <div class="card-icon">
+                    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </div>
+                <h2 class="card-title">김영경 컨설턴트와의 소통 방식</h2>
+            </div>
+            <div class="card-content">
+                <div class="comm-item">
+                    <div class="comm-icon">
+                        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    </div>
+                    <div class="comm-content">
+                        <h4>상시 소통 (온라인)</h4>
+                        <ul>
+                            <li>노션 & 카카오톡으로 언제든 질문 가능</li>
+                            <li>수행평가 기획, 과제 피드백, 학생부 정리 모두 노션에서 진행</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="comm-item">
+                    <div class="comm-icon">
+                        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="comm-content">
+                        <h4>대면 상담 (필요시)</h4>
+                        <ul>
+                            <li>학기 초 새 학기 기획 미팅</li>
+                            <li>중요 의사결정이 필요한 시기</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="subtle-note">
+                    대면 상담 일정은 등록 후 상호 조율하여 확정합니다
+                </div>
+                
+                <!-- Feedback Response Notice -->
+                <div style="margin-top: 1.25rem; background: linear-gradient(135deg, rgba(45, 53, 97, 0.08) 0%, rgba(45, 53, 97, 0.04) 100%); border: 1px solid rgba(45, 53, 97, 0.15); border-radius: 12px; padding: 1.25rem;">
+                    <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.875rem;">
+                        <div style="background: var(--primary); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        </div>
+                        <div>
+                            <strong style="color: var(--primary); font-size: 0.95rem;">피드백 응답 안내</strong>
+                        </div>
+                    </div>
+                    
+                    <div style="padding-left: 0.5rem;">
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.6;">
+                            컨설턴트가 <strong>상담, 설명회, 출장</strong> 등의 일정으로 인해<br>
+                            즉각적인 피드백이 어려울 수 있습니다.
+                        </p>
+                        
+                        <div style="display: flex; align-items: center; gap: 0.625rem; background: white; padding: 0.75rem 1rem; border-radius: 8px; border-left: 4px solid var(--accent);">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            <p style="font-size: 0.9rem; color: var(--text-primary); margin: 0; font-weight: 600;">
+                                모든 피드백은 <span style="color: var(--accent);">최대 24시간 이내</span> 답변드립니다
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Process Card -->
+        <section class="card">
+            <div class="card-header">
+                <div class="card-icon">
+                    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <h2 class="card-title">등록 진행 절차</h2>
+            </div>
+            <div class="card-content">
+                <div class="timeline">
+                    <div class="timeline-step">
+                        <div class="timeline-number">1</div>
+                        <div class="timeline-content">
+                            <h4>약관 동의 및 전자 서명</h4>
+                            <p>하단의 약관 확인 후 서명란에 서명해주세요</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-number">2</div>
+                        <div class="timeline-content">
+                            <h4>결제 안내 (서명 다음날)</h4>
+                            <p>서명이 완료되면 등록 의사가 확정됩니다</p>
+                            <div class="timeline-detail">
+                                <strong>📱 서명 후 다음날</strong>에 결제 안내 문자를 발송해 드립니다.<br>
+                                문자에 포함된 <strong>계좌번호</strong> 또는 <strong>카드결제 링크</strong>를 통해<br>
+                                편하신 방법으로 결제하시면 됩니다.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-number">3</div>
+                        <div class="timeline-content">
+                            <h4>HCB-DNA 설문 작성</h4>
+                            <p>민서의 강점과 성향 파악을 위한 필수 설문 (40~60분)</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-number">4</div>
+                        <div class="timeline-content">
+                            <h4>노션 대시보드 개설</h4>
+                            <p>민서 전용 입시 관리 페이지 생성 및 공유</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Scope Card -->
+        <section class="card service-card">
+            <div class="card-header">
+                <div class="card-icon">
+                    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                </div>
+                <h2 class="card-title">페이스메이커 서비스 안내</h2>
+            </div>
+            <div class="card-content">
+                <ul class="service-list">
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        입시 전략 및 로드맵 설계
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        수행평가 기획 및 피드백
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        학교생활기록부 관리
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        탐구 주제 브레인스토밍
+                    </li>
+                </ul>
+                <div class="divider"></div>
+                <div class="info-note">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    <span>페이스메이커는 입시 전략과 생기부 관리에 집중하며, 내신 교과 학습 지도는 포함되지 않습니다</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Period Card -->
+        <section class="card">
+            <div class="card-header">
+                <div class="card-icon">
+                    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </div>
+                <h2 class="card-title">2026학년도 교육 기간</h2>
+            </div>
+            <div class="card-content">
+                <div style="background: var(--gold-tint); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <span style="background: var(--accent); color: var(--primary); padding: 0.25rem 0.625rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">1월</span>
+                        <strong style="font-size: 0.9rem; color: var(--primary);">생기부 검토 기간</strong>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0; line-height: 1.6;">
+                        지난 학년 생기부를 꼼꼼히 검토합니다.<br>
+                        2월 개학 후 수정이 필요한 부분은 수정 요청을 진행합니다.
+                    </p>
+                </div>
+                
+                <div style="background: rgba(45, 53, 97, 0.05); border: 1px solid rgba(45, 53, 97, 0.15); border-radius: 10px; padding: 1rem; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <span style="background: var(--primary); color: white; padding: 0.25rem 0.625rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">2월</span>
+                        <strong style="font-size: 0.9rem; color: var(--primary);">로드맵 및 기획</strong>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0; line-height: 1.6;">
+                        새 학년을 위한 연간 로드맵을 수립하고<br>
+                        탐구 주제 및 활동 기획을 진행합니다.
+                    </p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(74, 157, 124, 0.1) 0%, rgba(74, 157, 124, 0.05) 100%); border: 1px solid rgba(74, 157, 124, 0.3); border-radius: 10px; padding: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <span style="background: var(--success); color: white; padding: 0.25rem 0.625rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">3월 ~ 12월</span>
+                        <strong style="font-size: 0.9rem; color: var(--primary);">정규 교육</strong>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0; line-height: 1.6;">
+                        본격적인 생기부 관리 및 입시 전략을 실행합니다.
+                    </p>
+                    <div style="margin-top: 0.75rem; padding: 0.625rem; background: rgba(74, 157, 124, 0.1); border-radius: 6px;">
+                        <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0;">
+                            <strong style="color: var(--success);">🎓 고3 학생</strong>: 수시지원 전략 수립 및 면접 대비 포함
+                        </p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 1rem; padding: 0.75rem; background: #f8f9fa; border-radius: 8px; text-align: center;">
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">
+                        📅 전체 교육 기간: <strong>2026년 1월 ~ 2027년 2월 28일</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notion Dashboard Card -->
+        <section class="card">
+            <div class="card-header">
+                <div class="card-icon">
+                    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+                <h2 class="card-title">민서의 입시 대시보드</h2>
+            </div>
+            <div class="card-content">
+                <p style="margin-bottom: 1.25rem;">학생과 컨설팅팀이 함께 사용하는 노션(Notion) 페이지입니다.</p>
+                <ul class="feature-list">
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        궁금한 점 질문 & 답변
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+                        수행평가 기획 및 피드백
+                    </li>
+                    <li>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        학교생활기록부 정리
+                    </li>
+                </ul>
+                
+                <div class="divider"></div>
+                
+                <!-- Step by Step Guide -->
+                <div style="background: var(--gold-tint); border: 1px solid rgba(212, 175, 55, 0.3); padding: 1.25rem; border-radius: 12px; margin-bottom: 1rem;">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem; font-size: 0.95rem;">📝 노션 & 카카오톡 설정 안내</h4>
+                    
+                    <div style="display: flex; gap: 0.75rem; margin-bottom: 1rem;">
+                        <div style="background: var(--accent); color: var(--primary); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; flex-shrink: 0;">1</div>
+                        <div>
+                            <strong style="color: var(--text-primary); font-size: 0.9rem;">노션 회원가입</strong>
+                            <p style="font-size: 0.825rem; color: var(--text-secondary); margin: 0.25rem 0 0 0;">아래 버튼을 눌러 노션 계정을 만들어주세요</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 0.75rem; margin-bottom: 1rem;">
+                        <div style="background: var(--accent); color: var(--primary); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; flex-shrink: 0;">2</div>
+                        <div>
+                            <strong style="color: var(--text-primary); font-size: 0.9rem;">카카오톡 친구 추가</strong>
+                            <p style="font-size: 0.825rem; color: var(--text-secondary); margin: 0.25rem 0 0 0;">아래 방법 중 하나로 친구 추가해주세요</p>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 0.75rem;">
+                        <div style="background: var(--accent); color: var(--primary); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; flex-shrink: 0;">3</div>
+                        <div>
+                            <strong style="color: var(--text-primary); font-size: 0.9rem;">이메일 주소 전송</strong>
+                            <p style="font-size: 0.825rem; color: var(--text-secondary); margin: 0.25rem 0 0 0;">노션 가입에 사용한 <strong>이메일 주소</strong>를<br><strong>카카오톡 1:1 채팅으로 보내주세요</strong><br>→ 대시보드 초대장을 보내드립니다</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-group" style="margin-bottom: 1rem;">
+                    <a href="https://www.notion.com/ko" target="_blank" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        노션 회원가입
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=Yqo0zcaqi7Q" target="_blank" class="btn btn-secondary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                        사용법 영상
+                    </a>
+                </div>
+                
+                <!-- KakaoTalk Friend Add Guide -->
+                <div style="background: #FEE500; border-radius: 12px; padding: 1.25rem; margin-bottom: 0.75rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#3C1E1E"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.76 1.78 5.2 4.5 6.6-.14.53-.9 3.4-.93 3.63 0 0-.02.17.09.24.11.07.24.03.24.03.31-.04 3.65-2.4 4.22-2.81.6.09 1.22.14 1.88.14 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+                        <strong style="color: #3C1E1E; font-size: 1rem;">카카오톡 친구 추가 방법</strong>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 10px; padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem; padding-bottom: 0.875rem; border-bottom: 1px dashed #ddd; margin-bottom: 0.875rem;">
+                            <div style="background: #3C1E1E; color: #FEE500; padding: 0.375rem 0.75rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700;">방법 1</div>
+                            <div>
+                                <p style="font-size: 0.9rem; color: #333; margin: 0; font-weight: 600;">ID로 검색</p>
+                                <p style="font-size: 0.825rem; color: #666; margin: 0.25rem 0 0 0;">친구 → 친구추가 → ID로 추가</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; background: #f8f8f8; padding: 1rem; border-radius: 8px; margin-bottom: 0.875rem;">
+                            <span style="font-size: 0.85rem; color: #666;">검색 ID:</span>
+                            <span style="font-size: 1.25rem; font-weight: 700; color: #3C1E1E; letter-spacing: 1px;">kyky6346</span>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="background: #3C1E1E; color: #FEE500; padding: 0.375rem 0.75rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700;">방법 2</div>
+                            <div>
+                                <p style="font-size: 0.9rem; color: #333; margin: 0; font-weight: 600;">전화번호로 검색</p>
+                                <p style="font-size: 0.825rem; color: #666; margin: 0.25rem 0 0 0;">연락처에 <strong>010-4144-8232</strong> 저장 후<br>친구 → 친구추가 → 연락처</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="padding: 0.875rem; background: rgba(45, 53, 97, 0.08); border-radius: 10px; border-left: 4px solid var(--primary);">
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0; line-height: 1.6;">
+                        💬 <strong>친구 추가 후</strong>, 채팅으로<br>
+                        "<strong>노션 가입 이메일: ○○○@○○○.com</strong>" 형식으로<br>
+                        보내주시면 대시보드 초대 링크를 전달해 드립니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HCB-DNA Assessment Card -->
+        <section class="card" style="border: 2px solid var(--accent); background: linear-gradient(135deg, var(--cream-tint) 0%, #fff 100%);">
+            <div class="card-header">
+                <div class="card-icon gold">
+                    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
+                <h2 class="card-title">📋 민서가 수행할 과제</h2>
+            </div>
+            <div class="card-content">
+                <div style="background: var(--primary); color: white; padding: 1rem; border-radius: 10px; margin-bottom: 1.25rem;">
+                    <strong style="font-size: 1.1rem;">HCB-DNA 평가</strong>
+                    <p style="font-size: 0.9rem; opacity: 0.9; margin-top: 0.5rem;">맞춤형 입시 전략 수립을 위한 필수 설문입니다</p>
+                </div>
+
+                <p style="margin-bottom: 1.25rem; color: var(--text-secondary);">
+                    아래 링크를 통해 설문에 <strong>성실하게</strong> 작성해주세요.<br>
+                    민서의 강점과 성향을 파악하여 최적의 전략을 설계하는 데 활용됩니다.
+                </p>
+
+                <div style="background: var(--background); padding: 1.25rem; border-radius: 12px; margin-bottom: 1.25rem;">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem; font-size: 1rem;">🧬 HCB란? (학생 설문 과정)</h4>
+                    <div style="display: grid; gap: 0.75rem;">
+                        <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <span style="background: var(--accent); color: var(--primary); padding: 0.25rem 0.6rem; border-radius: 6px; font-weight: 700; font-size: 0.85rem;">H</span>
+                            <div>
+                                <strong style="color: var(--text-primary);">Historical Context</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">역사적 맥락으로 나의 경험을 돌아봅니다</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <span style="background: var(--accent); color: var(--primary); padding: 0.25rem 0.6rem; border-radius: 6px; font-weight: 700; font-size: 0.85rem;">C</span>
+                            <div>
+                                <strong style="color: var(--text-primary);">Cognitive Structure</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">인지 구조를 통해 나의 생각 과정을 살펴봅니다</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <span style="background: var(--accent); color: var(--primary); padding: 0.25rem 0.6rem; border-radius: 6px; font-weight: 700; font-size: 0.85rem;">B</span>
+                            <div>
+                                <strong style="color: var(--text-primary);">Bounce-back</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">회복 탄력성을 점검합니다</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: var(--background); padding: 1.25rem; border-radius: 12px; margin-bottom: 1.25rem;">
+                    <h4 style="color: var(--primary); margin-bottom: 1rem; font-size: 1rem;">🔬 DNA란? (컨설팅팀 분석)</h4>
+                    <div style="display: grid; gap: 0.75rem;">
+                        <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <span style="background: var(--primary); color: white; padding: 0.25rem 0.6rem; border-radius: 6px; font-weight: 700; font-size: 0.85rem;">D</span>
+                            <div>
+                                <strong style="color: var(--text-primary);">Discover</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">설문을 통해 발견된 강점을 기반으로</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <span style="background: var(--primary); color: white; padding: 0.25rem 0.6rem; border-radius: 6px; font-weight: 700; font-size: 0.85rem;">N</span>
+                            <div>
+                                <strong style="color: var(--text-primary);">Navigate</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">방향성과 도전을 위한 기회를 발견하고</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <span style="background: var(--primary); color: white; padding: 0.25rem 0.6rem; border-radius: 6px; font-weight: 700; font-size: 0.85rem;">A</span>
+                            <div>
+                                <strong style="color: var(--text-primary);">Act</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">실행 가능한 인사이트를 제공하여 개인 맞춤형 전략을 수립합니다</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #fff3cd; border: 1px solid #ffc107; padding: 1rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                    <h4 style="color: #856404; margin-bottom: 0.75rem; font-size: 0.95rem;">📌 안내사항</h4>
+                    <ul style="margin: 0; padding-left: 1.25rem; color: #856404; font-size: 0.9rem;">
+                        <li>총 <strong>9개</strong>의 질문이 있습니다</li>
+                        <li>각 질문마다 <strong>STAR+R 5개 항목</strong>(상황/과제/행동/결과/성찰)을 작성합니다</li>
+                        <li>각 항목에는 작성 예시가 제공됩니다</li>
+                        <li>예상 소요시간: <strong>40~60분</strong></li>
+                    </ul>
+                </div>
+
+                <a href="https://tally.so/r/0QV9j9" target="_blank" class="hcb-dna-btn">
+                    <span class="hcb-dna-btn-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </span>
+                    <span class="hcb-dna-btn-text">HCB-DNA 설문 시작하기</span>
+                    <span class="hcb-dna-btn-arrow">→</span>
+                </a>
+                
+                <p style="text-align: center; margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted);">
+                    👆 위 버튼을 눌러 설문을 완료해주세요
+                </p>
+            </div>
+        </section>
+
+        <!-- Registration Payment Card with Signature -->
+        <section class="card payment-card" id="signature-card">
+            <div class="card-header">
+                <div class="card-icon gold">
+                    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+                </div>
+                <h2 class="card-title">전자계약 및 교육비 안내</h2>
+            </div>
+            <div class="card-content">
+                <div class="price-display">
+                    <p class="price-label">2026학년도 페이스메이커 총 교육비</p>
+                    <p class="final-price">6,705,000원</p>
+                </div>
+
+                <!-- Price Calculation Breakdown -->
+                <div class="price-calculation">
+                    <p class="price-calculation-title">교육비 산정 내역</p>
+                    <p class="price-calculation-formula">
+                        745,000원 <span class="op">×</span> 9개월 
+                    </p>
+                    <p class="price-calculation-detail">
+                      <strong style="color: var(--primary);">6,705,000원</strong>
+                    </p>
+                </div>
+
+                <!-- Payment Process Info -->
+                <div class="payment-info-box">
+                    <h4>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                        결제 안내
+                    </h4>
+                    <p>등록 의사를 확인하기 위해 <strong>하단의 서명란에 서명</strong>해주세요.</p>
+                    <p>서명이 완료되면 등록 의사가 확정됩니다.</p>
+                </div>
+                
+                <!-- Payment Date Highlight -->
+                <div style="background: linear-gradient(135deg, #fff3cd 0%, #ffeeba 100%); border: 2px solid #ffc107; border-radius: 12px; padding: 1.25rem; margin: 1rem 0;">
+                    <div style="display: flex; align-items: center; gap: 0.625rem; margin-bottom: 0.75rem;">
+                        <div style="background: #ffc107; color: #856404; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </div>
+                        <strong style="font-size: 1.05rem; color: #856404;">결제 안내 문자 발송일</strong>
+                    </div>
+                    <div style="background: white; border-radius: 8px; padding: 1rem; text-align: center;">
+                        <p style="font-size: 1.4rem; font-weight: 700; color: var(--primary); margin: 0;">서명 후 다음날</p>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0.5rem 0 0 0;">
+                            문자에 포함된 <strong>계좌번호</strong> 또는 <strong>카드결제 링크</strong>를 통해<br>
+                            편하신 방법으로 결제하시면 됩니다.
+                        </p>
+                    </div>
+                </div>
+
+                <details class="refund-details">
+                    <summary class="refund-summary">
+                        <span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px; vertical-align:middle;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            교습비 반환기준 상세보기
+                        </span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </summary>
+                    <div class="refund-content">
+                        <p style="margin-bottom:6px;"><strong>학원의 설립·운영 및 과외교습에 관한 법률 시행령 [별표 4] (개정 2020. 3. 31.)</strong></p>
+                        <p style="font-size:0.72rem; color:var(--text-muted); margin-bottom:8px;">교습비등 반환기준 (제18조제3항 관련)</p>
+
+                        <h5>1. 학원 또는 교습자의 사유로 인한 반환</h5>
+                        <table class="refund-table">
+                            <thead>
+                                <tr>
+                                    <th style="width:30%;">구분</th>
+                                    <th style="width:30%;">반환사유 발생일</th>
+                                    <th>반환금액</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>제18조제2항 제1호</td>
+                                    <td>학습자가 학원으로부터 격리된 날</td>
+                                    <td>이미 납부한 교습비등 − (이미 납부한 교습비등을 일할계산한 금액 × 교습 시작일 또는 학습장소 제공 시작일부터 학원으로부터 격리된 날의 전날까지의 일수)</td>
+                                </tr>
+                                <tr>
+                                    <td>제18조제2항 제1호의2 및 제2호</td>
+                                    <td>학원설립·운영자, 교습자 또는 개인과외교습자가 교습을 할 수 없거나 학습장소를 제공할 수 없게 된 날</td>
+                                    <td>이미 납부한 교습비등 − (이미 납부한 교습비등을 일할계산한 금액 × 교습 시작일 또는 학습장소 제공 시작일부터 교습을 할 수 없거나 학습장소를 제공할 수 없게 된 날의 전날까지의 일수)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h5>2. 학습자 본인 의사로 수강 포기 (교습기간 1개월 이내)</h5>
+                        <p class="section-note">독서실 제외 학원, 교습소 및 개인과외교습자</p>
+                        <table class="refund-table">
+                            <thead>
+                                <tr>
+                                    <th style="width:50%;">반환사유 발생일</th>
+                                    <th>반환금액</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>교습 시작 전</td>
+                                    <td class="refund-amount">이미 납부한 교습비등의 전액</td>
+                                </tr>
+                                <tr>
+                                    <td>교습 시작 후부터 총 교습시간의 1/3 경과 전까지</td>
+                                    <td class="refund-amount">이미 납부한 교습비등의 2/3에 해당하는 금액</td>
+                                </tr>
+                                <tr>
+                                    <td>총 교습시간의 1/3 경과 후부터 1/2 경과 전까지</td>
+                                    <td class="refund-amount">이미 납부한 교습비등의 1/2에 해당하는 금액</td>
+                                </tr>
+                                <tr>
+                                    <td>총 교습시간의 1/2 경과 후</td>
+                                    <td class="refund-amount">없음</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h5>3. 학습자 본인 의사로 수강 포기 (교습기간 1개월 초과)</h5>
+                        <table class="refund-table">
+                            <thead>
+                                <tr>
+                                    <th style="width:35%;">반환사유 발생일</th>
+                                    <th>반환금액</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>교습 시작 전 또는 학습장소 사용 전</td>
+                                    <td class="refund-amount">이미 납부한 교습비등의 전액</td>
+                                </tr>
+                                <tr>
+                                    <td>교습 시작 후 또는 학습장소 사용 후</td>
+                                    <td>반환사유가 발생한 해당 월의 반환 대상 교습비등(교습기간 또는 학습장소 사용기간이 1개월 이내인 경우의 기준에 따라 산출한 금액을 말한다)에 나머지 월의 교습비등의 전액을 합산한 금액</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="refund-notice">
+                            <strong>비고</strong><br>
+                            1. 총 교습시간은 교습기간 중의 총 교습시간을 말하며, 반환금액의 산정은 반환사유가 발생한 날까지 경과된 교습시간을 기준으로 한다.<br>
+                            2. 원격교습의 경우 반환금액은 교습내용을 실제 수강한 부분(인터넷으로 수강하거나 학습기기로 저장한 것을 말한다)에 해당하는 금액을 뺀 금액으로 한다.
+                        </div>
+
+                        <p style="margin-top:10px; font-size:0.72rem; color:var(--text-muted);">* 본 계약의 교육 기간은 2026년 1월 ~ 2027년 2월로 1개월을 초과하므로, 중도 해지 시 위 [3. 학습자 본인 의사로 수강 포기 (교습기간 1개월 초과)] 기준에 따라 환불이 진행됩니다.</p>
+                    </div>
+                </details>
+
+                <div class="divider"></div>
+
+                <!-- Agreement and Signature Section -->
+                <div class="agreement-box">
+                    <input type="checkbox" id="agree-terms">
+                    <label for="agree-terms" class="agreement-label">
+                        위 서비스 범위, 기간 및 환불 규정을 모두 확인하였으며 이에 동의합니다.
+                    </label>
+                </div>
+
+                <!-- Signer Information -->
+                <div class="signer-info">
+                    <div class="input-group">
+                        <label class="input-label" for="signer-name">계약자 성명 (학부모님)</label>
+                        <input type="text" id="signer-name" class="input-field" placeholder="성명을 입력해주세요">
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label" for="signer-phone">연락처</label>
+                        <input type="tel" id="signer-phone" class="input-field" placeholder="010-0000-0000">
+                    </div>
+                </div>
+
+                <div class="signature-section">
+                    <label class="signature-label">신규등록 동의 서명</label>
+                    <div class="canvas-container" id="canvas-container">
+                        <canvas id="signature-canvas"></canvas>
+                        <div class="signature-placeholder" id="placeholder">여기에 서명해 주세요</div>
+                    </div>
+                    <div class="signature-actions">
+                        <button class="btn-clear" id="clear-btn">지우기</button>
+                        <button class="btn-submit-sig" id="submit-btn" disabled>등록 신청 완료</button>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1rem; text-align: center; font-size: 0.8rem; color: var(--text-muted); line-height: 1.6;">
+                    서명 제출 시 등록 의사가 확정되며,<br>
+                    <strong>서명 다음날</strong> 결제 안내 문자가 발송됩니다.
+                </div>
+            </div>
+        </section>
+
+        <!-- Closing Message Card -->
+        <section class="card closing-card">
+            <div class="closing-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </div>
+            <p class="closing-message">
+                민서가 자신만의 색깔을 발견하고<br>
+                그 잠재력을 마음껏 펼칠 수 있도록,<br>
+                전문가의 시선으로 꼼꼼하게 함께하겠습니다.
+            </p>
+            <p class="closing-signature">감사합니다.</p>
+            <p class="closing-signoff">후츠파에듀케이션 대표 송지원 드림</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-title">문의사항이 있으시면 연락주세요</p>
+            <p class="footer-note">평일 09:00 - 22:00 상담 가능</p>
+            <a href="tel:010-4449-0829" class="phone-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                010-4449-0829
+            </a>
+            <p class="footer-sub-note">후츠파에듀케이션 · 경남 진주시</p>
+        </div>
+    </footer>
+
+    <!-- Toast Message -->
+    <div class="toast" id="toast">등록 신청이 완료되었습니다</div>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script>
+        // =====================================================
+        // 설정 영역 - 학생별로 이 부분만 수정하면 됩니다
+        // =====================================================
+        const STUDENT_NAME = '조민서';
+        const EMAILJS_PUBLIC_KEY = 'HG_GdYeopEfQJlOkw';
+        const EMAILJS_SERVICE_ID = 'service_6nplqts';
+        const EMAILJS_TEMPLATE_ID = 'template_3d2gunn';
+        // =====================================================
+
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+
+        const canvas = document.getElementById('signature-canvas');
+        const ctx = canvas.getContext('2d');
+        const container = document.getElementById('canvas-container');
+        const placeholder = document.getElementById('placeholder');
+        const clearBtn = document.getElementById('clear-btn');
+        const submitBtn = document.getElementById('submit-btn');
+        const agreeCheckbox = document.getElementById('agree-terms');
+        const signerNameInput = document.getElementById('signer-name');
+        const signerPhoneInput = document.getElementById('signer-phone');
+
+        let isDrawing = false;
+        let hasSigned = false;
+
+        function resizeCanvas() {
+            const rect = container.getBoundingClientRect();
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+            ctx.scale(dpr, dpr);
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = rect.height + 'px';
+            ctx.strokeStyle = '#2d3561';
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+        }
+
+        function getPosition(e) {
+            const rect = canvas.getBoundingClientRect();
+            const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+            const y = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top;
+            return { x, y };
+        }
+
+        function startDrawing(e) {
+            e.preventDefault();
+            isDrawing = true;
+            const pos = getPosition(e);
+            ctx.beginPath();
+            ctx.moveTo(pos.x, pos.y);
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            e.preventDefault();
+            const pos = getPosition(e);
+            ctx.lineTo(pos.x, pos.y);
+            ctx.stroke();
+            if (!hasSigned) {
+                hasSigned = true;
+                placeholder.style.display = 'none';
+                container.classList.add('signed');
+                validateForm();
+            }
+        }
+
+        function stopDrawing() { isDrawing = false; }
+
+        function clearSignature() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            hasSigned = false;
+            placeholder.style.display = 'block';
+            container.classList.remove('signed');
+            validateForm();
+        }
+
+        function validateForm() {
+            const isAgreed = agreeCheckbox.checked;
+            const hasName = signerNameInput.value.trim().length >= 2;
+            const hasPhone = signerPhoneInput.value.replace(/[^0-9]/g, '').length >= 10;
+            submitBtn.disabled = !(isAgreed && hasSigned && hasName && hasPhone);
+        }
+
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseleave', stopDrawing);
+        canvas.addEventListener('touchstart', startDrawing, { passive: false });
+        canvas.addEventListener('touchmove', draw, { passive: false });
+        canvas.addEventListener('touchend', stopDrawing);
+
+        clearBtn.addEventListener('click', clearSignature);
+        agreeCheckbox.addEventListener('change', validateForm);
+        signerNameInput.addEventListener('input', validateForm);
+        signerPhoneInput.addEventListener('input', validateForm);
+
+        submitBtn.addEventListener('click', async function() {
+            if (submitBtn.disabled) return;
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = '전송 중...';
+
+            try {
+                const signatureData = canvas.toDataURL('image/png');
+                const today = new Date();
+                const dateStr = `${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일`;
+
+                const templateParams = {
+                    student_name: STUDENT_NAME,
+                    signer_name: signerNameInput.value.trim(),
+                    signer_phone: signerPhoneInput.value.trim(),
+                    date: dateStr,
+                    signature_img: signatureData
+                };
+
+                console.log('이메일 전송 시도...');
+                console.log('- 학생명:', STUDENT_NAME);
+                console.log('- 서명자:', templateParams.signer_name);
+
+                await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+
+                console.log('이메일 전송 성공!');
+                showToast('등록 신청이 완료되었습니다! 감사합니다.');
+                submitBtn.textContent = '✓ 신청 완료';
+                submitBtn.style.background = '#4a9d7c';
+
+            } catch (error) {
+                console.error('이메일 전송 실패:', error);
+                showToast('전송 중 오류가 발생했습니다. 다시 시도해주세요.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = '등록 신청 완료';
+            }
+        });
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 4000);
+        }
+
+        window.addEventListener('load', resizeCanvas);
+        window.addEventListener('resize', resizeCanvas);
+    </script>
+</body>
+</html>
