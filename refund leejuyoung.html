@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>이주영 학생 환불 합의 | 후츠파에듀케이션</title>
+  <style>
+    :root{
+      --navy:#26345f;
+      --navy-2:#354576;
+      --gold:#d8b34d;
+      --gold-soft:#fff7dd;
+      --cream:#faf9f5;
+      --white:#ffffff;
+      --text:#26345f;
+      --sub:#5c6378;
+      --muted:#8a90a2;
+      --line:#e4e6ec;
+      --success:#278263;
+      --danger:#c84b4b;
+      --shadow:0 8px 28px rgba(38,52,95,.09);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+      background:var(--cream);
+      color:var(--text);
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+    }
+    button,input,select{font:inherit}
+    button{-webkit-tap-highlight-color:transparent}
+    .hidden{display:none!important}
+
+    /* 간단한 본인 확인 */
+    .gate{
+      position:fixed; inset:0; z-index:9999;
+      display:flex; align-items:center; justify-content:center;
+      padding:24px;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(216,179,77,.17), transparent 33%),
+        linear-gradient(145deg,var(--navy),#1e294d);
+    }
+    .gate-card{
+      width:min(420px,100%);
+      background:#fff;
+      border-radius:22px;
+      padding:30px 24px 24px;
+      box-shadow:0 24px 70px rgba(0,0,0,.24);
+      text-align:center;
+    }
+    .gate-mark{
+      width:54px;height:54px;margin:0 auto 16px;
+      display:grid;place-items:center;
+      border-radius:16px;
+      background:var(--gold-soft);
+      font-size:26px;
+    }
+    .gate-card h1{font-size:1.35rem;margin:0 0 8px;line-height:1.4}
+    .gate-card p{margin:0 0 20px;color:var(--sub);font-size:.92rem}
+    .gate-input{
+      width:100%;height:52px;border:2px solid var(--line);border-radius:12px;
+      text-align:center;font-size:1.15rem;letter-spacing:.2em;font-weight:700;
+      outline:none;
+    }
+    .gate-input:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(216,179,77,.15)}
+    .gate-btn{
+      width:100%;height:52px;margin-top:12px;border:0;border-radius:12px;
+      background:var(--navy);color:#fff;font-weight:700;cursor:pointer;
+    }
+    .gate-error{height:22px;margin-top:8px;color:var(--danger);font-size:.82rem}
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(145deg,var(--navy),var(--navy-2));
+      color:#fff;
+      padding:42px 20px 56px;
+      text-align:center;
+    }
+    .hero:before{
+      content:"";position:absolute;inset:0;
+      background:
+       radial-gradient(circle at 10% 10%,rgba(216,179,77,.22),transparent 26%),
+       radial-gradient(circle at 90% 0%,rgba(255,255,255,.08),transparent 30%);
+    }
+    .hero-inner{position:relative;max-width:760px;margin:auto}
+    .brand{font-size:.84rem;letter-spacing:.14em;font-weight:700;opacity:.82}
+    .hero h1{margin:14px 0 10px;font-size:clamp(1.55rem,5vw,2.35rem);line-height:1.36}
+    .hero p{margin:0;color:rgba(255,255,255,.78);font-size:.94rem}
+    .doc-chip{
+      display:inline-flex;align-items:center;gap:7px;
+      margin-top:18px;padding:7px 13px;border-radius:999px;
+      background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.16);
+      color:#fff;font-size:.78rem;
+    }
+
+    main{max-width:760px;margin:-30px auto 0;padding:0 16px 56px;position:relative}
+    .card{
+      background:var(--white);border:1px solid rgba(228,230,236,.9);
+      border-radius:18px;padding:22px;margin-bottom:14px;box-shadow:var(--shadow);
+    }
+    .intro{border-top:4px solid var(--gold)}
+    .intro h2{font-size:1.1rem;margin:0 0 10px}
+    .intro p{margin:0;color:var(--sub);font-size:.93rem}
+    .section-title{
+      display:flex;align-items:center;gap:10px;
+      margin:0 0 16px;font-size:1.08rem;
+    }
+    .section-no{
+      width:28px;height:28px;display:grid;place-items:center;
+      flex:0 0 auto;border-radius:9px;background:var(--navy);color:#fff;
+      font-size:.8rem;font-weight:800;
+    }
+
+    .refund-hero{
+      background:linear-gradient(135deg,var(--gold-soft),#fff);
+      border:1px solid rgba(216,179,77,.38);
+      text-align:center;
+    }
+    .refund-label{font-size:.84rem;color:var(--sub);font-weight:700}
+    .refund-amount{
+      margin:7px 0 2px;font-weight:800;
+      font-size:clamp(2rem,8vw,3rem);letter-spacing:-.045em;color:var(--navy);
+    }
+    .refund-korean{font-size:.84rem;color:var(--sub)}
+    .no-deduction{
+      display:flex;align-items:flex-start;gap:10px;text-align:left;
+      margin-top:18px;padding:13px 14px;border-radius:12px;
+      background:#fff;border:1px solid rgba(216,179,77,.45);
+      font-size:.88rem;color:var(--sub);
+    }
+    .no-deduction strong{color:var(--navy)}
+    .check-icon{
+      width:23px;height:23px;flex:0 0 auto;display:grid;place-items:center;
+      border-radius:50%;background:var(--success);color:#fff;font-size:.75rem;font-weight:900;
+    }
+
+    .info-table{border:1px solid var(--line);border-radius:13px;overflow:hidden}
+    .info-row{display:grid;grid-template-columns:126px 1fr;border-bottom:1px solid var(--line)}
+    .info-row:last-child{border-bottom:0}
+    .info-label{
+      display:flex;align-items:center;padding:12px 13px;
+      background:#f5f6f8;font-size:.84rem;font-weight:700;color:var(--text)
+    }
+    .info-value{padding:12px 14px;font-size:.88rem;color:var(--sub)}
+    .info-value strong{color:var(--text)}
+    .formula{
+      margin-top:14px;padding:14px;border-radius:12px;background:#f7f8fb;
+      color:var(--sub);font-size:.88rem;text-align:center;
+    }
+    .formula strong{color:var(--navy)}
+    details{border-top:1px solid var(--line);margin-top:16px;padding-top:13px}
+    summary{cursor:pointer;font-size:.88rem;font-weight:700;color:var(--navy)}
+    .detail-list{margin:12px 0 0;padding-left:20px;color:var(--sub);font-size:.85rem}
+    .detail-list li{margin:6px 0}
+
+    .notice{
+      padding:15px;border-radius:13px;background:#f7f8fb;color:var(--sub);font-size:.86rem;
+    }
+    .notice b{color:var(--text)}
+    .notice + .notice{margin-top:9px}
+    .notice.gold{background:var(--gold-soft);border:1px solid rgba(216,179,77,.32)}
+
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .field{display:flex;flex-direction:column;gap:6px}
+    .field.full{grid-column:1/-1}
+    .field label{font-size:.83rem;font-weight:700;color:var(--text)}
+    .field input,.field select{
+      width:100%;height:48px;padding:0 13px;
+      border:1.5px solid var(--line);border-radius:11px;background:#fff;color:var(--text);outline:none;
+    }
+    .field input:focus,.field select:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(216,179,77,.12)}
+    .field input.error,.field select.error{border-color:var(--danger)}
+    .field small{color:var(--muted);font-size:.75rem}
+
+    .consent{
+      display:flex;gap:10px;align-items:flex-start;
+      margin-top:12px;padding:13px;border:1px solid var(--line);border-radius:12px;background:#fff;
+    }
+    .consent input{width:18px;height:18px;margin-top:2px;accent-color:var(--navy);flex:0 0 auto}
+    .consent label{font-size:.82rem;color:var(--sub);cursor:pointer}
+    .consent strong{color:var(--text)}
+
+    .signature-label{display:flex;justify-content:space-between;align-items:center;margin:18px 0 8px}
+    .signature-label b{font-size:.9rem}
+    .signature-label span{font-size:.74rem;color:var(--muted)}
+    .canvas-wrap{
+      position:relative;width:100%;height:175px;
+      border:2px dashed #cfd3dd;border-radius:13px;background:#fff;
+      overflow:hidden;touch-action:none;
+    }
+    .canvas-wrap.signed{border-style:solid;border-color:var(--success)}
+    canvas{display:block;width:100%;height:100%;touch-action:none}
+    .canvas-placeholder{
+      position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;
+      color:#a2a7b5;font-size:.86rem;text-align:center;
+    }
+    .sig-tools{display:flex;justify-content:flex-end;margin-top:8px}
+    .clear-btn{
+      border:1px solid var(--line);border-radius:9px;background:#fff;
+      padding:8px 13px;color:var(--sub);font-size:.8rem;cursor:pointer;
+    }
+    .submit-btn{
+      width:100%;min-height:56px;border:0;border-radius:14px;margin-top:16px;
+      background:linear-gradient(135deg,var(--navy),var(--navy-2));
+      color:#fff;font-weight:800;font-size:1rem;cursor:pointer;
+      box-shadow:0 8px 22px rgba(38,52,95,.22);
+    }
+    .submit-btn:disabled{cursor:not-allowed;opacity:.42;box-shadow:none}
+    .submit-note{text-align:center;color:var(--muted);font-size:.75rem;margin:9px 0 0}
+
+    .success-panel{
+      display:none;text-align:center;background:#fff;border:1px solid rgba(39,130,99,.25);
+    }
+    .success-panel.show{display:block}
+    .success-icon{
+      width:58px;height:58px;margin:0 auto 13px;border-radius:50%;
+      display:grid;place-items:center;background:#e7f6f0;color:var(--success);font-size:1.8rem;font-weight:900;
+    }
+    .success-panel h2{font-size:1.2rem;margin:0 0 8px}
+    .success-panel p{font-size:.88rem;color:var(--sub);margin:0 0 15px}
+    .download-btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:44px;padding:0 16px;border-radius:10px;text-decoration:none;
+      background:#f1f3f8;color:var(--navy);font-size:.85rem;font-weight:700;
+    }
+
+    footer{text-align:center;padding:2px 18px 40px;color:var(--muted);font-size:.76rem}
+
+    /* 이메일 첨부용 전자 합의서 */
+    #printable-agreement{
+      position:fixed;left:-12000px;top:0;width:794px;min-height:1123px;
+      padding:54px 58px;background:#fff;color:#222;
+      font-family:"Malgun Gothic","Noto Sans KR",sans-serif;
+    }
+    .p-title{text-align:center;font-size:27px;font-weight:800;margin-bottom:28px}
+    .p-meta{text-align:right;font-size:11px;color:#777;margin-bottom:10px}
+    .p-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:20px}
+    .p-table th,.p-table td{border:1px solid #9ca1aa;padding:10px 11px;vertical-align:middle}
+    .p-table th{width:26%;background:#f0f1f3;text-align:center;font-weight:700}
+    .p-sec{font-size:16px;font-weight:800;margin:20px 0 9px}
+    .p-refund{background:#fff4c9;font-size:16px;font-weight:800}
+    .p-note{font-size:12px;line-height:1.65;margin:9px 0}
+    .p-sign-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+    .p-sign-box{border:1px solid #9ca1aa;min-height:132px;padding:13px;text-align:center}
+    .p-sign-name{font-size:13px;font-weight:700;margin-bottom:8px}
+    .p-sign-image{height:65px;display:flex;align-items:center;justify-content:center}
+    .p-sign-image img{max-width:210px;max-height:62px}
+    .p-foot{font-size:10px;color:#777;text-align:right;margin-top:20px}
+
+    .toast{
+      position:fixed;left:50%;bottom:20px;z-index:10000;
+      transform:translate(-50%,90px);opacity:0;
+      max-width:calc(100% - 32px);padding:12px 16px;border-radius:11px;
+      background:#202b4e;color:#fff;font-size:.84rem;text-align:center;
+      box-shadow:0 10px 28px rgba(0,0,0,.22);transition:.25s ease;
+    }
+    .toast.show{transform:translate(-50%,0);opacity:1}
+
+    @media(max-width:590px){
+      .hero{padding-top:34px}
+      main{padding-left:12px;padding-right:12px}
+      .card{padding:18px;border-radius:16px}
+      .info-row{grid-template-columns:105px 1fr}
+      .info-label,.info-value{padding:11px 10px;font-size:.81rem}
+      .form-grid{grid-template-columns:1fr}
+      .field.full{grid-column:auto}
+      .canvas-wrap{height:160px}
+    }
+    @media print{
+      .gate,.hero,.intro,.refund-hero,.card:not(#agreement-card),footer,.toast{display:none!important}
+      #agreement-card{box-shadow:none;border:0}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gate" id="gate">
+    <div class="gate-card">
+      <div class="gate-mark">🔐</div>
+      <h1>보호자 본인 확인</h1>
+      <p>이주영 학생의 환불 합의서입니다.<br>보호자 휴대전화 뒤 4자리를 입력해 주세요.</p>
+      <input class="gate-input" id="gate-code" type="tel" inputmode="numeric" maxlength="4" autocomplete="one-time-code" aria-label="휴대전화 뒤 4자리">
+      <button class="gate-btn" id="gate-btn" type="button">합의서 열기</button>
+      <div class="gate-error" id="gate-error" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="brand">후츠파에듀케이션</div>
+      <h1>교육관리 서비스<br>중도 종료 및 환불 합의</h1>
+      <p>이주영 학생 · 보호자 이광희 님</p>
+      <div class="doc-chip">문서번호 HUTZPA-RF-20260727-LJY · 전자서명용</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="card intro">
+      <h2>이광희 아버님께</h2>
+      <p>
+        주영 학생의 교육관리 서비스 중도 종료 요청에 따라, 제공된 서비스와 남은 관리기간을 확인하여
+        환불 내역을 아래와 같이 정리하였습니다. 내용을 확인하신 뒤 환불받으실 계좌를 입력하고 전자서명을 부탁드립니다.
+      </p>
+    </section>
+
+    <section class="card refund-hero">
+      <div class="refund-label">최종 환불 예정 금액</div>
+      <div class="refund-amount">5,069,167원</div>
+      <div class="refund-korean">금 오백육만 구천백육십칠 원정</div>
+      <div class="no-deduction">
+        <div class="check-icon">✓</div>
+        <div>
+          <strong>네이버페이 결제수수료 및 환불 과정의 부대비용은 후츠파에듀케이션이 전액 부담합니다.</strong><br>
+          위 환불금에서는 결제수수료·이체수수료 등 어떠한 비용도 별도로 공제하지 않습니다.
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title"><span class="section-no">1</span> 계약 및 서비스 내용</h2>
+      <div class="info-table">
+        <div class="info-row">
+          <div class="info-label">사업자</div>
+          <div class="info-value"><strong>후츠파 입시컨설팅 원격학원</strong><br>대표자 송지원 · 사업자등록번호 356-07-01143</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">서비스</div>
+          <div class="info-value">페이스메이커 연간 교육관리 서비스(고3)</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">정규기간</div>
+          <div class="info-value">2026년 3월 1일 ~ 2027년 2월 28일</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">등록·결제</div>
+          <div class="info-value">2026년 3월 30일 · 네이버페이 · 총 <strong>8,690,000원</strong></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">3월분 반영</div>
+          <div class="info-value">
+            정규기간 중 3월분은 등록 직후 제공한 <strong>1·2학년 학교생활기록부 분석 비용으로 대체</strong>하였으며,
+            과목별 활동 피드백 등 정규 관리 서비스는 2026년 3월 30일부터 제공하였습니다.
+          </div>
+        </div>
+      </div>
+      <details>
+        <summary>연간 관리 서비스의 세부 범위 확인</summary>
+        <ul class="detail-list">
+          <li>고등학교 1·2학년 학교생활기록부 종합 분석</li>
+          <li>3학년 학교생활기록부 관리를 위한 과목별 활동·리소스 피드백</li>
+          <li>학교생활기록부 가이드</li>
+          <li>수시 원서 지원 전략 및 정시 원서 지원 전략</li>
+          <li>대학별 면접 준비</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title"><span class="section-no">2</span> 중도 종료 및 환불 산정</h2>
+      <div class="info-table">
+        <div class="info-row">
+          <div class="info-label">종료 의사</div>
+          <div class="info-value">2026년 7월 27일</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">반영 기간</div>
+          <div class="info-value">2026년 3월 ~ 7월</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">환불 기간</div>
+          <div class="info-value"><strong>2026년 8월 ~ 2027년 2월, 총 7개월</strong></div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">환불 후 귀속액</div>
+          <div class="info-value">3,620,833원</div>
+        </div>
+      </div>
+      <div class="formula">
+        <strong>8,690,000원 × 7개월 ÷ 12개월 = 5,069,166.67원</strong><br>
+        원 단위 반올림 후 최종 환불금 5,069,167원
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title"><span class="section-no">3</span> 환불 방법</h2>
+      <div class="notice gold">
+        <b>환불 방식</b><br>
+        네이버페이 원결제의 일부 취소가 어려운 관계로, 보호자가 지정한 계좌로
+        <b>5,069,167원 전액을 별도 계좌이체</b>합니다.
+      </div>
+      <div class="notice">
+        <b>환불 예정일</b><br>
+        전자서명과 계좌 확인이 완료된 뒤 <b>2026년 8월 5일~7일 중</b> 이체할 예정이며,
+        이체 완료 후 별도로 안내드립니다.
+      </div>
+    </section>
+
+    <section class="card" id="agreement-card">
+      <h2 class="section-title"><span class="section-no">4</span> 보호자 확인 및 전자서명</h2>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="signer-name">보호자 성명</label>
+          <input id="signer-name" type="text" value="이광희" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="signer-phone">보호자 연락처</label>
+          <input id="signer-phone" type="tel" value="010-3959-1432" inputmode="tel" autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="bank-name">은행명</label>
+          <input id="bank-name" type="text" list="bank-list" placeholder="예: 국민은행" autocomplete="off">
+          <datalist id="bank-list">
+            <option value="경남은행"><option value="국민은행"><option value="농협은행"><option value="부산은행">
+            <option value="신한은행"><option value="우리은행"><option value="하나은행"><option value="기업은행">
+            <option value="카카오뱅크"><option value="토스뱅크"><option value="새마을금고"><option value="우체국">
+          </datalist>
+        </div>
+        <div class="field">
+          <label for="account-holder">예금주</label>
+          <input id="account-holder" type="text" value="이광희" autocomplete="off">
+        </div>
+        <div class="field full">
+          <label for="account-number">환불 계좌번호</label>
+          <input id="account-number" type="text" inputmode="numeric" placeholder="숫자 또는 하이픈(-)을 포함해 입력" autocomplete="off">
+          <small>환불 계좌 확인을 위해 정확히 입력해 주세요.</small>
+        </div>
+      </div>
+
+      <div class="consent">
+        <input id="agree-contract" type="checkbox">
+        <label for="agree-contract">
+          위 계약 내용, 서비스 제공 내역, 환불 산정 방식과 <strong>최종 환불금 5,069,167원</strong>을 확인하였으며,
+          해당 금액의 지급 및 수령에 동의합니다.
+        </label>
+      </div>
+
+      <div class="consent">
+        <input id="agree-privacy" type="checkbox">
+        <label for="agree-privacy">
+          환불 처리와 합의 증빙을 위해 성명, 연락처, 환불계좌, 전자서명 및 제출시각을 수집·보관하는 데 동의합니다.
+          수집 정보는 환불 처리와 관련 증빙 목적 외에는 사용하지 않습니다.
+        </label>
+      </div>
+
+      <div class="signature-label">
+        <b>보호자 전자서명</b>
+        <span>손가락 또는 마우스로 서명</span>
+      </div>
+      <div class="canvas-wrap" id="canvas-wrap">
+        <canvas id="signature-canvas"></canvas>
+        <div class="canvas-placeholder" id="canvas-placeholder">이곳에 서명해 주세요</div>
+      </div>
+      <div class="sig-tools">
+        <button class="clear-btn" id="clear-signature" type="button">서명 지우기</button>
+      </div>
+
+      <button class="submit-btn" id="submit-agreement" type="button" disabled>
+        전자서명 제출 및 환불계좌 전달
+      </button>
+      <p class="submit-note">제출된 합의 내용과 서명 이미지는 후츠파에듀케이션의 확인 메일로 전송됩니다.</p>
+    </section>
+
+    <section class="card success-panel" id="success-panel">
+      <div class="success-icon">✓</div>
+      <h2>전자서명이 완료되었습니다</h2>
+      <p>
+        합의서와 환불계좌가 정상적으로 전달되었습니다.<br>
+        환불금 5,069,167원은 2026년 8월 5일~7일 중 이체 예정입니다.
+      </p>
+      <a class="download-btn" id="download-agreement" href="#" download="이주영_환불합의서_전자서명본.png">서명본 저장하기</a>
+    </section>
+  </main>
+
+  <footer>
+    후츠파에듀케이션 · 후츠파 입시컨설팅 원격학원<br>
+    본 페이지는 이주영 학생의 환불 합의를 위해 개별 제작되었습니다.
+  </footer>
+
+  <!-- 전송용 이미지 문서 -->
+  <div id="printable-agreement" aria-hidden="true">
+    <div class="p-meta">문서번호 HUTZPA-RF-20260727-LJY · 문서버전 1.0</div>
+    <div class="p-title">교육관리 서비스 중도 종료 및 환불 합의서</div>
+
+    <table class="p-table">
+      <tr><th>사업자</th><td>후츠파 입시컨설팅 원격학원 · 대표자 송지원 · 사업자등록번호 356-07-01143</td></tr>
+      <tr><th>이용자</th><td>학생 이주영 · 보호자 <span id="p-signer-name">이광희</span> · 연락처 <span id="p-signer-phone"></span></td></tr>
+    </table>
+
+    <div class="p-sec">1. 계약 및 서비스 내용</div>
+    <table class="p-table">
+      <tr><th>서비스명</th><td>페이스메이커 연간 교육관리 서비스(고3)</td></tr>
+      <tr><th>정규기간</th><td>2026년 3월 1일 ~ 2027년 2월 28일</td></tr>
+      <tr><th>등록·결제</th><td>2026년 3월 30일 · 네이버페이 · 총 결제금액 8,690,000원</td></tr>
+      <tr><th>제공 내용</th><td>1·2학년 학교생활기록부 분석, 3학년 과목별 활동·리소스 피드백, 학교생활기록부 가이드, 수시·정시 원서 전략, 면접 준비</td></tr>
+      <tr><th>특이사항</th><td>정규기간 중 3월분은 등록 직후 제공한 1·2학년 학교생활기록부 분석 비용으로 대체하고, 정규 관리 서비스는 2026년 3월 30일부터 제공함.</td></tr>
+    </table>
+
+    <div class="p-sec">2. 중도 종료 및 환불 내역</div>
+    <table class="p-table">
+      <tr><th>종료 의사 전달일</th><td>2026년 7월 27일</td></tr>
+      <tr><th>환불 대상 기간</th><td>2026년 8월 ~ 2027년 2월, 총 7개월</td></tr>
+      <tr><th>산정식</th><td>8,690,000원 × 7개월 ÷ 12개월 = 5,069,166.67원</td></tr>
+      <tr><th>최종 환불금</th><td class="p-refund">금 오백육만 구천백육십칠 원정 (₩5,069,167)</td></tr>
+      <tr><th>환불 후 귀속액</th><td>금 삼백육십이만 팔백삼십삼 원정 (₩3,620,833)</td></tr>
+    </table>
+
+    <div class="p-sec">3. 환불 방법 및 확인</div>
+    <p class="p-note">
+      ① 네이버페이 원결제의 일부 취소가 어려운 관계로 보호자가 지정한 계좌로 환불금을 별도 계좌이체합니다.<br>
+      ② 네이버페이 결제수수료, 계좌이체 수수료 및 환불 과정의 부대비용은 사업자가 전액 부담하며 최종 환불금에서 공제하지 않습니다.<br>
+      ③ 환불계좌: <span id="p-bank"></span> / <span id="p-account"></span> / 예금주 <span id="p-holder"></span><br>
+      ④ 환불 예정일: 2026년 8월 5일~7일<br>
+      ⑤ 환불금이 지급되고 이용자가 이를 수령하면 본 중도 종료에 따른 환불금의 지급 및 수령이 완료된 것으로 확인합니다.
+    </p>
+
+    <div class="p-sign-row">
+      <div class="p-sign-box">
+        <div class="p-sign-name">사업자 · 후츠파 입시컨설팅 원격학원</div>
+        <div class="p-sign-image" style="font-size:20px;font-weight:800;color:#26345f">대표자 송지원</div>
+        <div style="font-size:11px;color:#777">전자문서 발행 및 환불 의무 확인</div>
+      </div>
+      <div class="p-sign-box">
+        <div class="p-sign-name">이용자 · 이주영 학생 보호자</div>
+        <div class="p-sign-image"><img id="p-signature-image" alt="보호자 전자서명"></div>
+        <div style="font-size:11px;color:#777"><span id="p-submitted-at"></span> 전자서명</div>
+      </div>
+    </div>
+    <div class="p-foot">전자서명 제출 정보와 서명 이미지는 환불 처리 및 합의 증빙 목적으로 보관됩니다.</div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script>
+    // 기존 등록 페이지에서 사용하던 EmailJS 연결값을 적용했습니다.
+    // 배포 후 EmailJS 대시보드의 Domains(허용 도메인)에 실제 배포 주소를 등록해 주세요.
+    const EMAILJS_SERVICE_ID = 'service_6nplqts';
+    const EMAILJS_TEMPLATE_ID = 'template_3d2gunn';
+    const EMAILJS_PUBLIC_KEY = 'HG_GdYeopEfQJlOkw';
+
+    const AGREEMENT_ID = 'HUTZPA-RF-20260727-LJY';
+    const ACCESS_CODE = '1432';
+    const REFUND_AMOUNT = '5,069,167원';
+
+    if (window.emailjs) {
+      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    }
+
+    const $ = (id) => document.getElementById(id);
+    const gate = $('gate');
+    const gateCode = $('gate-code');
+    const gateBtn = $('gate-btn');
+    const gateError = $('gate-error');
+    const toast = $('toast');
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => toast.classList.remove('show'), 3200);
+    }
+
+    function openAgreement() {
+      if (gateCode.value.trim() === ACCESS_CODE) {
+        try { sessionStorage.setItem('hutzpa_refund_gate', 'ok'); } catch (_) {}
+        gate.classList.add('hidden');
+        document.body.style.overflow = '';
+      } else {
+        gateError.textContent = '휴대전화 뒤 4자리를 다시 확인해 주세요.';
+        gateCode.focus();
+      }
+    }
+
+    let gateVerified = false;
+    try { gateVerified = sessionStorage.getItem('hutzpa_refund_gate') === 'ok'; } catch (_) {}
+    if (gateVerified) {
+      gate.classList.add('hidden');
+    } else {
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => gateCode.focus(), 150);
+    }
+    gateBtn.addEventListener('click', openAgreement);
+    gateCode.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') openAgreement();
+    });
+    gateCode.addEventListener('input', () => {
+      gateCode.value = gateCode.value.replace(/\D/g,'').slice(0,4);
+      gateError.textContent = '';
+    });
+
+    // 입력 필드
+    const signerName = $('signer-name');
+    const signerPhone = $('signer-phone');
+    const bankName = $('bank-name');
+    const accountHolder = $('account-holder');
+    const accountNumber = $('account-number');
+    const agreeContract = $('agree-contract');
+    const agreePrivacy = $('agree-privacy');
+    const submitBtn = $('submit-agreement');
+    const successPanel = $('success-panel');
+    const downloadAgreement = $('download-agreement');
+
+    signerPhone.addEventListener('input', () => {
+      const n = signerPhone.value.replace(/\D/g,'').slice(0,11);
+      signerPhone.value = n.length <= 3 ? n :
+        n.length <= 7 ? `${n.slice(0,3)}-${n.slice(3)}` :
+        `${n.slice(0,3)}-${n.slice(3,7)}-${n.slice(7)}`;
+      validateForm();
+    });
+    accountNumber.addEventListener('input', () => {
+      accountNumber.value = accountNumber.value.replace(/[^0-9-]/g,'').slice(0,24);
+      validateForm();
+    });
+
+    [signerName, bankName, accountHolder].forEach(el => el.addEventListener('input', validateForm));
+    [agreeContract, agreePrivacy].forEach(el => el.addEventListener('change', validateForm));
+
+    // 전자서명 캔버스
+    const canvas = $('signature-canvas');
+    const ctx = canvas.getContext('2d');
+    const canvasWrap = $('canvas-wrap');
+    const canvasPlaceholder = $('canvas-placeholder');
+    const clearSignature = $('clear-signature');
+    let drawing = false;
+    let pointCount = 0;
+    let hasSignature = false;
+
+    function sizeCanvas(preserve = false) {
+      const saved = preserve && hasSignature ? canvas.toDataURL() : null;
+      const rect = canvasWrap.getBoundingClientRect();
+      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.round(rect.width * ratio);
+      canvas.height = Math.round(rect.height * ratio);
+      canvas.style.width = rect.width + 'px';
+      canvas.style.height = rect.height + 'px';
+      ctx.setTransform(ratio,0,0,ratio,0,0);
+      ctx.lineWidth = 2.2;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.strokeStyle = '#26345f';
+      if (saved) {
+        const img = new Image();
+        img.onload = () => ctx.drawImage(img,0,0,rect.width,rect.height);
+        img.src = saved;
+      }
+    }
+    requestAnimationFrame(() => sizeCanvas(false));
+    window.addEventListener('resize', () => sizeCanvas(true));
+
+    function pointFromEvent(e) {
+      const rect = canvas.getBoundingClientRect();
+      return { x:e.clientX-rect.left, y:e.clientY-rect.top };
+    }
+    canvas.addEventListener('pointerdown', (e) => {
+      drawing = true;
+      canvas.setPointerCapture(e.pointerId);
+      const p = pointFromEvent(e);
+      ctx.beginPath();
+      ctx.moveTo(p.x,p.y);
+      pointCount = 0;
+      e.preventDefault();
+    });
+    canvas.addEventListener('pointermove', (e) => {
+      if (!drawing) return;
+      const p = pointFromEvent(e);
+      ctx.lineTo(p.x,p.y);
+      ctx.stroke();
+      pointCount++;
+      if (pointCount > 10) {
+        hasSignature = true;
+        canvasPlaceholder.classList.add('hidden');
+        canvasWrap.classList.add('signed');
+        validateForm();
+      }
+      e.preventDefault();
+    });
+    function finishDraw(e) {
+      if (!drawing) return;
+      drawing = false;
+      ctx.closePath();
+      try { canvas.releasePointerCapture(e.pointerId); } catch (_) {}
+    }
+    canvas.addEventListener('pointerup', finishDraw);
+    canvas.addEventListener('pointercancel', finishDraw);
+    canvas.addEventListener('pointerleave', finishDraw);
+
+    clearSignature.addEventListener('click', () => {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      hasSignature = false;
+      pointCount = 0;
+      canvasPlaceholder.classList.remove('hidden');
+      canvasWrap.classList.remove('signed');
+      validateForm();
+    });
+
+    function isValidPhone(v) {
+      return v.replace(/\D/g,'').length === 11;
+    }
+    function isValidAccount(v) {
+      return v.replace(/\D/g,'').length >= 8;
+    }
+    function validateForm() {
+      const valid =
+        signerName.value.trim().length >= 2 &&
+        isValidPhone(signerPhone.value) &&
+        bankName.value.trim().length >= 2 &&
+        accountHolder.value.trim().length >= 2 &&
+        isValidAccount(accountNumber.value) &&
+        agreeContract.checked &&
+        agreePrivacy.checked &&
+        hasSignature;
+      submitBtn.disabled = !valid;
+      return valid;
+    }
+
+    function markInvalid(el) {
+      el.classList.add('error');
+      setTimeout(() => el.classList.remove('error'), 1800);
+    }
+
+    function koreanDateTime(date = new Date()) {
+      return date.toLocaleString('ko-KR', {
+        year:'numeric',month:'long',day:'numeric',
+        hour:'2-digit',minute:'2-digit',second:'2-digit'
+      });
+    }
+
+    async function agreementHash() {
+      const text = [
+        AGREEMENT_ID,'이주영','이광희','8690000','5069167',
+        '2026-03-01','2027-02-28','2026-07-27',
+        '네이버페이 결제수수료 및 부대비용 사업자 부담'
+      ].join('|');
+      if (!window.crypto?.subtle) return 'unsupported';
+      const data = new TextEncoder().encode(text);
+      const digest = await crypto.subtle.digest('SHA-256', data);
+      return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2,'0')).join('');
+    }
+
+    function fillPrintable(signatureData, submittedAt) {
+      $('p-signer-name').textContent = signerName.value.trim();
+      $('p-signer-phone').textContent = signerPhone.value.trim();
+      $('p-bank').textContent = bankName.value.trim();
+      $('p-account').textContent = accountNumber.value.trim();
+      $('p-holder').textContent = accountHolder.value.trim();
+      $('p-signature-image').src = signatureData;
+      $('p-submitted-at').textContent = submittedAt;
+    }
+
+    // 다운로드용 합의서 원본 캔버스
+    async function renderAgreementCanvas() {
+      if (!window.html2canvas) throw new Error('html2canvas unavailable');
+      return html2canvas($('printable-agreement'), {
+        scale: 1.35,
+        backgroundColor: '#ffffff',
+        useCORS: true,
+        logging: false,
+        width: 794,
+        windowWidth: 900
+      });
+    }
+
+    // EmailJS는 첨부가 아닌 일반 변수의 총 용량을 50KB로 제한합니다.
+    // 메일에 실어 보내는 이미지는 예산 안으로 압축합니다.
+    function compressCanvas(source, budgetChars) {
+      const steps = [
+        { scale: 1,    quality: 0.85 },
+        { scale: 0.8,  quality: 0.72 },
+        { scale: 0.6,  quality: 0.62 },
+        { scale: 0.45, quality: 0.55 },
+        { scale: 0.35, quality: 0.45 }
+      ];
+      for (const step of steps) {
+        const c = document.createElement('canvas');
+        c.width  = Math.max(1, Math.round(source.width  * step.scale));
+        c.height = Math.max(1, Math.round(source.height * step.scale));
+        const cx = c.getContext('2d');
+        cx.fillStyle = '#ffffff';
+        cx.fillRect(0, 0, c.width, c.height);
+        cx.drawImage(source, 0, 0, c.width, c.height);
+        const url = c.toDataURL('image/jpeg', step.quality);
+        if (url.length <= budgetChars) return url;
+      }
+      return null;
+    }
+
+    function agreementSummary(submittedAt) {
+      return [
+        '교육관리 서비스 중도 종료 및 환불 합의서 전자서명 제출',
+        '문서번호: ' + AGREEMENT_ID + ' (문서버전 1.0)',
+        '',
+        '[이용자]',
+        '학생: 이주영',
+        '보호자: ' + signerName.value.trim(),
+        '연락처: ' + signerPhone.value.trim(),
+        '',
+        '[계약 및 서비스]',
+        '서비스: 페이스메이커 연간 교육관리 서비스(고3)',
+        '정규기간: 2026년 3월 1일 ~ 2027년 2월 28일',
+        '등록·결제: 2026년 3월 30일 · 네이버페이 · 8,690,000원',
+        '',
+        '[환불 산정]',
+        '종료 의사 전달일: 2026년 7월 27일',
+        '환불 대상 기간: 2026년 8월 ~ 2027년 2월 (7개월)',
+        '산정식: 8,690,000원 × 7 ÷ 12 = 5,069,166.67원',
+        '최종 환불금: ' + REFUND_AMOUNT + ' (환불 후 귀속액 3,620,833원)',
+        '수수료 공제: 없음 (결제·이체 수수료 전액 사업자 부담)',
+        '',
+        '[환불 계좌]',
+        '은행: ' + bankName.value.trim(),
+        '계좌번호: ' + accountNumber.value.trim(),
+        '예금주: ' + accountHolder.value.trim(),
+        '환불 예정일: 2026년 8월 5일~7일',
+        '',
+        '[동의 및 서명]',
+        '환불 산정·지급 동의: 동의함',
+        '개인정보 수집·보관 동의: 동의함',
+        '제출 시각: ' + submittedAt
+      ].join('\n');
+    }
+
+    submitBtn.addEventListener('click', async () => {
+      if (!validateForm()) {
+        if (signerName.value.trim().length < 2) markInvalid(signerName);
+        else if (!isValidPhone(signerPhone.value)) markInvalid(signerPhone);
+        else if (bankName.value.trim().length < 2) markInvalid(bankName);
+        else if (accountHolder.value.trim().length < 2) markInvalid(accountHolder);
+        else if (!isValidAccount(accountNumber.value)) markInvalid(accountNumber);
+        showToast('입력 내용과 동의·서명을 모두 확인해 주세요.');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = '전자서명본 생성 및 전송 중...';
+
+      const submittedAt = koreanDateTime();
+      const signatureData = canvas.toDataURL('image/png');
+      fillPrintable(signatureData, submittedAt);
+
+      // (1) 보호자가 저장할 합의서 원본 — 용량 제한 없음
+      let downloadImage = signatureData;
+      let agreementCanvas = null;
+      try {
+        agreementCanvas = await renderAgreementCanvas();
+        downloadImage = agreementCanvas.toDataURL('image/png');
+      } catch (captureError) {
+        console.warn('합의서 이미지 생성 실패, 서명 이미지로 대체합니다.', captureError);
+      }
+      downloadAgreement.href = downloadImage;
+
+      // (2) 메일 본문에 실을 이미지 — 50KB 예산 안으로 압축
+      let mailImage = compressCanvas(canvas, 20000);
+      if (!mailImage) mailImage = signatureData;
+
+      const hash = await agreementHash();
+
+      // 현재 메일 서식은 학생명·계약자·연락처·등록일 4칸만 표시합니다.
+      // 서식을 고치지 않아도 계좌가 보이도록, 표시되는 칸에 함께 담아 보냅니다.
+      const accountLine = bankName.value.trim() + ' ' + accountNumber.value.trim()
+        + ' (예금주 ' + accountHolder.value.trim() + ')';
+
+      const params = {
+        subject: '[환불합의] 이주영 학생 전자서명 제출',
+        message: agreementSummary(submittedAt),
+        student_name: '이주영 학생 · 환불 합의서 · 환불금 ' + REFUND_AMOUNT,
+        signer_name: signerName.value.trim(),
+        signer_phone: signerPhone.value.trim() + '   ▸ 환불계좌: ' + accountLine,
+        date: submittedAt + '   ▸ 환불금 ' + REFUND_AMOUNT + ' · ' + accountLine,
+        signature_img: mailImage,
+        agreement_id: AGREEMENT_ID,
+        agreement_type: '교육관리 서비스 중도 종료 및 환불 합의서',
+        refund_amount: REFUND_AMOUNT,
+        bank_name: bankName.value.trim(),
+        bank_account: accountNumber.value.trim(),
+        account_holder: accountHolder.value.trim(),
+        agreement_hash: hash,
+        document_version: '1.0',
+        user_agent: navigator.userAgent.slice(0, 180)
+      };
+
+      // 50KB를 넘으면 이미지를 빼고 텍스트만이라도 반드시 도착하게 함
+      if (JSON.stringify(params).length > 46000) {
+        params.signature_img = '';
+        params.message += '\n\n※ 서명 이미지는 용량 제한으로 전송되지 않았습니다. 보호자가 저장한 서명본을 별도로 확인해 주세요.';
+      }
+
+      try {
+        if (!window.emailjs) throw new Error('EmailJS unavailable');
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params);
+
+        try { localStorage.setItem('hutzpa_refund_agreement_submitted', submittedAt); } catch (_) {}
+        $('agreement-card').classList.add('hidden');
+        successPanel.classList.add('show');
+        successPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        showToast('전자서명이 정상적으로 제출되었습니다.');
+      } catch (error) {
+        console.error('전자서명 전송 실패:', error);
+        successPanel.classList.add('show');
+        successPanel.querySelector('h2').textContent = '서명본은 생성되었으나 자동 전송이 지연되었습니다';
+        successPanel.querySelector('p').innerHTML =
+          '아래 <b>서명본 저장하기</b>를 눌러 저장한 뒤, 후츠파에듀케이션 카카오톡으로 보내주세요.';
+        successPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        submitBtn.disabled = false;
+        submitBtn.textContent = '다시 전송하기';
+        showToast('자동 전송에 실패했습니다. 서명본을 저장해 전달해 주세요.');
+      }
+    });
+
+    validateForm();
+  </script>
+</body>
+</html>
