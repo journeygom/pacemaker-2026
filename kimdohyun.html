@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#F7F4EB">
+
+<title>2026 페이스메이커 등록 안내 | 김도현 학생</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="2026 페이스메이커 등록 안내 — 김도현 학생 & 학부모님">
+<meta property="og:description" content="후츠파에듀케이션 페이스메이커 등록 안내 페이지입니다. 등록 마감 2026년 8월 7일(금).">
+<meta name="description" content="후츠파에듀케이션 2026 페이스메이커 등록 안내 — 김도현 학생을 위해 개별 제작된 페이지입니다.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700;900&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════════════════
+   후츠파 페이스메이커 등록 안내 — "종이 계약서가 살아나는" 페이지
+   팔레트: 아이보리 지면 + 녹색 잉크 + 먹색 (v3 토크콘서트와 동일 계열)
+══════════════════════════════════════════════ */
+:root{
+  --paper:#F7F4EB;
+  --paper-dim:#EAE5D6;
+  --ink:#161512;
+  --green:#0E7B45;
+  --green-deep:#0A5A33;
+  --green-pale:#E4F0E7;
+  --white:#FFFFFF;
+  --muted:#6E6A5E;
+  --rule:#161512;
+  --kakao:#FEE500;
+  --kakao-ink:#3C1E1E;
+  --serif:'Noto Serif KR','Nanum Myeongjo',serif;
+  --sans:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --pad:22px;
+  --maxw:600px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans); color:var(--ink); background:var(--paper-dim);
+  line-height:1.65; word-break:keep-all; overflow-x:hidden;
+}
+img,svg{display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;color:inherit;background:none;border:none;cursor:pointer}
+input{font-family:inherit}
+
+/* ── 지면 프레임 ── */
+.sheet{
+  max-width:var(--maxw); margin:0 auto; background:var(--paper);
+  min-height:100dvh; position:relative;
+  box-shadow:0 0 0 1px rgba(22,21,18,.08), 0 24px 60px rgba(22,21,18,.18);
+}
+.sheet::before{
+  content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 8%, rgba(14,123,69,.04), transparent 60%),
+    radial-gradient(ellipse 50% 30% at 85% 90%, rgba(22,21,18,.03), transparent 60%);
+}
+
+/* ── 오프닝 스플래시 ── */
+#splash{
+  position:fixed; inset:0; z-index:90; background:var(--paper);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px;
+  transition:transform .65s cubic-bezier(.7,0,.2,1);
+}
+#splash.off{transform:translateY(-101%)}
+#splash .logo circle{
+  fill:none; stroke:var(--green); stroke-width:4.5; stroke-linecap:round;
+  stroke-dasharray:120; stroke-dashoffset:120;
+  animation:draw .9s ease forwards;
+}
+#splash .logo circle:nth-child(2){animation-delay:.18s}
+#splash .word{
+  font-family:var(--serif); font-weight:700; letter-spacing:.42em; text-indent:.42em;
+  font-size:13px; color:var(--ink); opacity:0; animation:fadeUp .5s .55s ease forwards;
+}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ── 상단 바 ── */
+.topbar{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:16px var(--pad); border-bottom:1px solid rgba(22,21,18,.12);
+  position:relative; z-index:2;
+}
+.brand{display:flex; align-items:center; gap:8px; font-weight:800; font-size:13.5px; letter-spacing:-.01em}
+.brand svg circle{fill:none; stroke:var(--green); stroke-width:4}
+.topdate{font-size:11.5px; font-weight:700; letter-spacing:.14em; color:var(--muted)}
+
+/* ── 히어로 ── */
+.hero{padding:48px var(--pad) 38px; text-align:center; position:relative; z-index:1}
+.badge{
+  display:inline-block; border:1.5px solid var(--green); color:var(--green);
+  border-radius:999px; padding:7px 16px; font-size:12.5px; font-weight:700; letter-spacing:.02em;
+}
+.hero-quote{
+  font-family:var(--serif); font-weight:600; font-size:clamp(18px,5.2vw,23px);
+  line-height:1.62; margin-top:26px;
+}
+.uline{position:relative; display:inline-block; font-weight:900}
+.uline svg{position:absolute; left:0; right:0; bottom:-4px; width:100%; height:8px}
+.uline path{
+  fill:none; stroke:var(--green); stroke-width:5; stroke-linecap:round;
+  stroke-dasharray:210; stroke-dashoffset:210;
+  transition:stroke-dashoffset .9s cubic-bezier(.6,0,.3,1) 1.15s;
+}
+body.ready .uline path{stroke-dashoffset:0}
+.hero-year{
+  font-family:var(--serif); font-weight:900; font-size:clamp(52px,15vw,76px);
+  line-height:1; margin-top:30px; letter-spacing:.01em;
+}
+.hero-title{
+  font-family:var(--serif); font-weight:900; color:var(--green);
+  font-size:clamp(38px,11vw,58px); line-height:1.16; letter-spacing:-.01em; margin-top:6px;
+}
+.hero-sub{margin-top:18px; font-size:14.5px; color:#3d3a32; font-weight:500}
+.hero-note{margin-top:8px; font-size:12px; color:var(--muted)}
+
+/* 히어로 단계별 등장 */
+.stage{opacity:0; transform:translateY(18px); transition:opacity .65s ease, transform .65s ease}
+body.ready .stage{opacity:1; transform:none}
+body.ready .d1{transition-delay:.05s}
+body.ready .d2{transition-delay:.22s}
+body.ready .d3{transition-delay:.45s}
+body.ready .d4{transition-delay:.62s}
+body.ready .d5{transition-delay:.82s}
+
+/* ── 녹색 티커 ── */
+.ticker{background:var(--green); color:#F2F7EF; overflow:hidden; padding:10px 0; border-block:2px solid var(--ink)}
+.ticker-track{display:flex; width:max-content; animation:slide 26s linear infinite}
+.ticker span{font-size:12.5px; font-weight:700; letter-spacing:.12em; white-space:nowrap; padding-right:14px}
+.ticker b{color:#BFE3CC; font-weight:700; padding-right:14px}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ── 공통 섹션 ── */
+.sec{padding:44px var(--pad); position:relative; z-index:1}
+.sec + .sec{padding-top:0}
+.sec-label{
+  font-size:12px; font-weight:800; letter-spacing:.22em; color:var(--green);
+  text-align:center; margin-bottom:10px;
+}
+.sec-head{
+  font-family:var(--serif); font-weight:900; font-size:clamp(21px,6vw,27px);
+  text-align:center; line-height:1.4; margin-bottom:22px;
+}
+.sec-lede{font-size:14px; color:#3d3a32; line-height:1.75; text-align:center; margin:-8px 0 22px}
+
+/* ── 카운트다운 ── */
+.count-box{
+  border-top:2.5px solid var(--rule); border-bottom:2.5px solid var(--rule);
+  padding:26px 6px 30px; text-align:center;
+}
+.dchip{
+  display:inline-block; background:var(--ink); color:var(--paper); font-weight:800;
+  font-size:13px; letter-spacing:.06em; border-radius:999px; padding:5px 16px; margin-bottom:18px;
+}
+.count-grid{display:flex; justify-content:center; gap:6px}
+.cell{flex:1; max-width:112px}
+.cell .num{
+  font-family:var(--serif); font-weight:900; font-size:clamp(30px,9.4vw,44px);
+  line-height:1.1; background:var(--white); border:1.5px solid rgba(22,21,18,.16);
+  border-radius:12px; padding:12px 0 8px; font-variant-numeric:tabular-nums;
+}
+.cell .lab{font-size:11.5px; font-weight:700; color:var(--muted); margin-top:7px; letter-spacing:.1em}
+.count-note{margin-top:16px; font-size:13px; color:var(--muted); font-weight:500}
+
+/* ── 인사말 ── */
+.letter{
+  border:1.5px solid rgba(22,21,18,.16); border-radius:16px; background:var(--white);
+  padding:24px 22px; position:relative;
+}
+.letter::before{
+  content:"人事"; position:absolute; top:14px; right:16px;
+  font-family:var(--serif); font-weight:900; font-size:13px; color:rgba(14,123,69,.35);
+  letter-spacing:.2em;
+}
+.letter p{font-size:14px; line-height:1.85; color:#2c2a24}
+.letter p + p{margin-top:12px}
+.letter .sign{margin-top:16px; text-align:right; font-family:var(--serif); font-weight:700; font-size:14px}
+
+/* ── 실적 카드 ── */
+.result{
+  border:1.5px solid rgba(22,21,18,.14); border-radius:16px; background:var(--white);
+  padding:18px; margin-bottom:12px;
+}
+.result-top{display:flex; align-items:center; gap:8px; margin-bottom:10px}
+.school{
+  background:var(--ink); color:var(--paper); font-size:11.5px; font-weight:800;
+  padding:4px 10px; border-radius:7px; letter-spacing:.04em;
+}
+.result.gr .school{background:var(--green)}
+.result-name{font-weight:800; font-size:14.5px}
+.result ul{list-style:none; display:grid; gap:7px}
+.result li{position:relative; padding-left:18px; font-size:13.5px; line-height:1.55; color:#33312a}
+.result li::before{content:""; position:absolute; left:2px; top:9px; width:7px; height:7px; border-radius:50%; background:var(--green)}
+.result li small{display:block; font-size:11.5px; color:var(--muted); font-weight:500}
+.result-close{font-size:13.5px; line-height:1.75; color:#3d3a32; margin-top:6px}
+
+/* ── 팀 ── */
+.team-table{border-top:2.5px solid var(--rule); border-bottom:2.5px solid var(--rule)}
+.member{display:flex; gap:14px; padding:16px 4px; align-items:flex-start}
+.member + .member{border-top:1px solid rgba(22,21,18,.14)}
+.role{
+  flex:0 0 78px; font-size:11px; font-weight:800; letter-spacing:.06em;
+  color:var(--green); padding-top:3px;
+}
+.mname{font-weight:800; font-size:15.5px}
+.mdesc{font-size:12.5px; color:var(--muted); margin-top:2px; font-weight:500}
+.member.lead{background:var(--green-pale); margin:0 -10px; padding:16px 14px; border-radius:12px; border-top:none}
+.member.lead + .member{border-top:none}
+.member.lead .role{color:var(--green-deep)}
+.lead-chip{
+  display:inline-block; margin-left:6px; background:var(--green); color:#fff;
+  font-size:10.5px; font-weight:800; padding:2px 8px; border-radius:999px; vertical-align:2px;
+}
+.team-sub{font-size:12px; font-weight:800; letter-spacing:.14em; color:var(--muted); padding:14px 4px 4px}
+
+/* ── 소통 방식 ── */
+.comm{display:grid; gap:10px}
+.comm-item{
+  display:grid; grid-template-columns:40px 1fr; gap:12px; align-items:flex-start;
+  background:var(--white); border:1.5px solid rgba(22,21,18,.14); border-radius:14px; padding:15px;
+}
+.comm-icn{
+  width:40px; height:40px; border-radius:12px; background:var(--green-pale);
+  display:grid; place-items:center; color:var(--green-deep);
+}
+.comm-item h4{font-size:14.5px; font-weight:800; margin-bottom:4px}
+.comm-item ul{list-style:none; display:grid; gap:3px}
+.comm-item li{font-size:13px; color:#3d3a32; position:relative; padding-left:14px}
+.comm-item li::before{content:"·"; position:absolute; left:2px; font-weight:900; color:var(--green)}
+.comm-note{font-size:12px; color:var(--muted); text-align:center; margin-top:10px}
+.reply-box{
+  margin-top:14px; border:1.5px dashed rgba(14,123,69,.5); border-radius:14px;
+  background:rgba(14,123,69,.05); padding:16px;
+}
+.reply-box h5{font-size:13px; font-weight:800; color:var(--green-deep); margin-bottom:6px; letter-spacing:.04em}
+.reply-box p{font-size:13px; line-height:1.7; color:#33312a}
+.reply-box strong{color:var(--green-deep)}
+
+/* ── 등록 절차 ── */
+.steps{position:relative; display:grid; gap:0}
+.step{display:grid; grid-template-columns:44px 1fr; gap:14px; position:relative; padding-bottom:22px}
+.step:last-child{padding-bottom:0}
+.step::before{
+  content:""; position:absolute; left:21px; top:44px; bottom:0; width:2px;
+  background:repeating-linear-gradient(to bottom, rgba(22,21,18,.3) 0 4px, transparent 4px 9px);
+}
+.step:last-child::before{display:none}
+.step-no{
+  width:44px; height:44px; border-radius:50%; background:var(--paper);
+  border:2px solid var(--ink); display:grid; place-items:center;
+  font-family:var(--serif); font-weight:900; font-size:18px; position:relative; z-index:1;
+}
+.step.hot .step-no{background:var(--green); border-color:var(--green); color:#fff}
+.step h4{font-size:15px; font-weight:800; padding-top:8px}
+.step p{font-size:13px; color:#3d3a32; margin-top:3px}
+.step-detail{
+  margin-top:9px; background:var(--white); border:1.5px solid rgba(22,21,18,.14);
+  border-radius:12px; padding:12px 14px; font-size:12.5px; line-height:1.7; color:#33312a;
+}
+.step-detail strong{color:var(--green-deep)}
+
+/* ── 서비스 범위 ── */
+.svc{display:grid; gap:9px}
+.svc li{
+  list-style:none; display:flex; align-items:center; gap:10px;
+  background:var(--white); border:1.5px solid rgba(22,21,18,.14);
+  border-radius:12px; padding:13px 15px; font-size:14px; font-weight:700;
+}
+.svc svg{flex:0 0 auto; stroke:var(--green); stroke-width:2.6; fill:none}
+.svc-warn{
+  margin-top:12px; display:flex; gap:9px; align-items:flex-start;
+  font-size:12.5px; color:var(--muted); line-height:1.65; padding:0 4px;
+}
+.svc-warn svg{flex:0 0 auto; stroke:var(--muted); stroke-width:2; fill:none; margin-top:2px}
+
+/* ── 기간 ── */
+.period{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+.period-item{border-radius:14px; padding:16px 14px; border:1.5px solid rgba(22,21,18,.14); background:var(--white)}
+.period-item.main{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+.pbadge{
+  display:inline-block; font-size:10.5px; font-weight:800; letter-spacing:.08em;
+  padding:3px 9px; border-radius:999px; background:var(--green-pale); color:var(--green-deep); margin-bottom:9px;
+}
+.period-item.main .pbadge{background:rgba(255,255,255,.15); color:#BFE3CC}
+.pdate{font-family:var(--serif); font-weight:800; font-size:14.5px; line-height:1.4}
+.pdesc{font-size:12px; margin-top:6px; color:var(--muted); line-height:1.6}
+.period-item.main .pdesc{color:rgba(247,244,235,.7)}
+@media (max-width:420px){ .period{grid-template-columns:1fr} }
+
+/* ── 노션 & 카카오 ── */
+.setup{border-top:2.5px solid var(--rule); border-bottom:2.5px solid var(--rule); padding:6px 0}
+.setup-row{display:flex; gap:14px; padding:15px 4px; align-items:flex-start}
+.setup-row + .setup-row{border-top:1px solid rgba(22,21,18,.14)}
+.setup-no{
+  flex:0 0 26px; width:26px; height:26px; border-radius:50%; background:var(--green);
+  color:#fff; font-weight:800; font-size:12.5px; display:grid; place-items:center; margin-top:2px;
+}
+.setup-row h5{font-size:14px; font-weight:800}
+.setup-row p{font-size:12.5px; color:#3d3a32; margin-top:3px; line-height:1.65}
+.setup-row strong{color:var(--green-deep)}
+.btn-row{display:flex; gap:8px; margin-top:16px}
+.btn{
+  flex:1; display:flex; align-items:center; justify-content:center; gap:7px;
+  border-radius:12px; padding:13px 0; font-weight:800; font-size:13.5px;
+  transition:transform .15s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn-ink{background:var(--ink); color:var(--paper)}
+.btn-line{border:1.5px solid var(--ink); background:var(--white)}
+.btn svg{stroke:currentColor; stroke-width:2; fill:none}
+
+.kakao-card{background:var(--kakao); border-radius:16px; padding:18px; margin-top:16px}
+.kakao-head{display:flex; align-items:center; gap:8px; margin-bottom:12px; color:var(--kakao-ink); font-weight:800; font-size:14.5px}
+.kakao-in{background:var(--white); border-radius:12px; padding:14px}
+.kk-row{display:flex; align-items:center; gap:12px}
+.kk-row + .kk-row{margin-top:12px; padding-top:12px; border-top:1px dashed #ddd}
+.kk-tag{background:var(--kakao-ink); color:var(--kakao); font-size:11px; font-weight:800; padding:5px 10px; border-radius:7px; white-space:nowrap}
+.kk-row h6{font-size:13.5px; font-weight:800; color:#333}
+.kk-row p{font-size:12px; color:#666; margin-top:2px; line-height:1.6}
+.kk-id{
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  background:#f7f7f4; border-radius:9px; padding:12px; margin:12px 0;
+}
+.kk-id small{font-size:12px; color:#666}
+.kk-id b{font-size:20px; font-weight:900; color:var(--kakao-ink); letter-spacing:1px}
+.after-add{
+  margin-top:12px; border-left:4px solid var(--green); background:rgba(14,123,69,.06);
+  border-radius:0 10px 10px 0; padding:12px 14px; font-size:12.5px; line-height:1.7; color:#33312a;
+}
+.after-add strong{color:var(--green-deep)}
+
+/* ── HCB-DNA ── */
+.hcb-frame{border:2px solid var(--green); border-radius:18px; overflow:hidden; background:var(--white)}
+.hcb-top{background:var(--green); color:#fff; padding:16px 18px}
+.hcb-top b{font-size:16px; font-weight:900}
+.hcb-top p{font-size:12.5px; opacity:.9; margin-top:3px}
+.hcb-body{padding:18px}
+.hcb-body > p{font-size:13.5px; line-height:1.7; color:#33312a; margin-bottom:14px}
+.dna-grid{display:grid; gap:8px; margin-bottom:14px}
+.dna-row{display:flex; gap:10px; align-items:flex-start}
+.dna-key{
+  flex:0 0 26px; width:26px; height:26px; border-radius:7px; display:grid; place-items:center;
+  font-weight:900; font-size:12.5px;
+}
+.dna-key.h{background:var(--green-pale); color:var(--green-deep)}
+.dna-key.d{background:var(--ink); color:var(--paper)}
+.dna-row b{font-size:13px}
+.dna-row p{font-size:12px; color:var(--muted); line-height:1.55}
+.dna-sub{font-size:12.5px; font-weight:800; letter-spacing:.1em; color:var(--green-deep); margin:14px 0 8px}
+.hcb-info{
+  border:1.5px dashed rgba(22,21,18,.3); border-radius:12px; padding:13px 15px; margin-bottom:16px;
+}
+.hcb-info h6{font-size:12.5px; font-weight:800; margin-bottom:7px}
+.hcb-info ul{list-style:none; display:grid; gap:4px}
+.hcb-info li{font-size:12.5px; color:#3d3a32; position:relative; padding-left:14px}
+.hcb-info li::before{content:"·"; position:absolute; left:2px; font-weight:900; color:var(--green)}
+.hcb-btn{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  width:100%; background:var(--green); color:#fff; border-radius:13px;
+  padding:16px 18px; font-size:15.5px; font-weight:800;
+  box-shadow:0 6px 18px rgba(14,123,69,.35); transition:transform .15s ease;
+  position:relative; overflow:hidden;
+}
+.hcb-btn:active{transform:scale(.98)}
+.hcb-btn::after{
+  content:""; position:absolute; top:0; left:-70%; width:40%; height:100%;
+  background:linear-gradient(105deg, transparent, rgba(255,255,255,.25), transparent);
+  animation:shine 3.4s ease-in-out infinite;
+}
+@keyframes shine{0%,55%{left:-70%}85%,100%{left:130%}}
+.hcb-hint{text-align:center; font-size:11.5px; color:var(--muted); margin-top:9px}
+
+/* ── 교육비 & 서명 ── */
+.pay-frame{border:2.5px solid var(--ink); border-radius:18px; background:var(--white); overflow:hidden}
+.pay-head{
+  background:var(--ink); color:var(--paper); padding:18px; text-align:center;
+}
+.pay-head .lab{font-size:11.5px; font-weight:700; letter-spacing:.2em; color:rgba(247,244,235,.6)}
+.pay-calc{margin-top:8px; font-size:13.5px; color:#BFE3CC; font-weight:700}
+.pay-price{
+  font-family:var(--serif); font-weight:900; font-size:clamp(30px,9vw,40px); margin-top:2px;
+}
+.pay-price small{font-size:.5em; font-weight:700}
+.pay-body{padding:20px 18px}
+.pay-meta{text-align:center; font-size:12.5px; color:var(--muted); margin-bottom:14px}
+.deadline{
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  border:1.5px solid var(--green); color:var(--green-deep); background:var(--green-pale);
+  border-radius:12px; padding:12px; font-weight:800; font-size:14px; margin-bottom:16px;
+}
+.deadline svg{stroke:var(--green-deep); stroke-width:2; fill:none}
+
+.refund{border-top:1px solid rgba(22,21,18,.14); border-bottom:1px solid rgba(22,21,18,.14)}
+.refund summary{
+  list-style:none; cursor:pointer; padding:15px 30px 15px 2px; position:relative;
+  font-size:13.5px; font-weight:800;
+}
+.refund summary::-webkit-details-marker{display:none}
+.refund summary::after{
+  content:"+"; position:absolute; right:4px; top:50%; transform:translateY(-50%);
+  color:var(--green); font-size:20px; font-weight:400; transition:transform .25s ease;
+}
+.refund[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.refund-in{padding:2px 2px 16px; font-size:12.5px; color:#33312a; line-height:1.7}
+.refund-table{width:100%; border-collapse:collapse; margin-top:8px; font-size:12px}
+.refund-table th{
+  background:var(--paper); border:1px solid rgba(22,21,18,.2); padding:8px; font-weight:800; text-align:left;
+}
+.refund-table td{border:1px solid rgba(22,21,18,.2); padding:8px}
+.refund-fn{font-size:11px; color:var(--muted); margin-top:8px}
+
+.agree{
+  display:flex; gap:10px; align-items:flex-start; margin:18px 0 14px;
+  background:var(--paper); border-radius:12px; padding:14px;
+}
+.agree input{width:18px; height:18px; accent-color:var(--green); margin-top:2px; flex:0 0 auto}
+.agree label{font-size:13px; line-height:1.6; cursor:pointer}
+
+.field{margin-bottom:12px}
+.field label{display:block; font-size:12px; font-weight:800; color:var(--muted); margin-bottom:5px; letter-spacing:.04em}
+.field input{
+  width:100%; border:1.5px solid rgba(22,21,18,.25); border-radius:11px;
+  background:var(--white); padding:12px 14px; font-size:15px;
+}
+.field input:focus{outline:none; border-color:var(--green)}
+.field input.error{border-color:#c0392b}
+
+.sig-label{font-size:12px; font-weight:800; color:var(--muted); margin:14px 0 6px; letter-spacing:.04em}
+.canvas-wrap{
+  position:relative; height:170px; border:1.5px dashed rgba(22,21,18,.35);
+  border-radius:13px; background:repeating-linear-gradient(0deg, var(--white) 0 39px, rgba(14,123,69,.06) 39px 40px);
+  overflow:hidden; touch-action:none;
+}
+.canvas-wrap.signed{border-style:solid; border-color:var(--green)}
+#sig-canvas{position:absolute; inset:0; width:100%; height:100%}
+.sig-ph{
+  position:absolute; inset:0; display:grid; place-items:center; pointer-events:none;
+  font-family:var(--serif); font-size:14px; color:rgba(22,21,18,.35); letter-spacing:.1em;
+}
+.sig-actions{display:flex; gap:8px; margin-top:12px}
+.btn-clear{
+  flex:0 0 auto; border:1.5px solid rgba(22,21,18,.3); border-radius:12px; padding:14px 18px;
+  font-weight:700; font-size:13.5px; background:var(--white);
+}
+.btn-clear:active{background:var(--paper)}
+.btn-sig{
+  flex:1; background:var(--green); color:#fff; border-radius:12px; padding:14px 0;
+  font-weight:800; font-size:15px; transition:opacity .2s ease, transform .15s ease;
+  box-shadow:0 6px 18px rgba(14,123,69,.35);
+}
+.btn-sig:disabled{opacity:.45; box-shadow:none; cursor:not-allowed}
+.btn-sig:not(:disabled):active{transform:scale(.98)}
+.pay-fine{margin-top:14px; text-align:center; font-size:12px; color:var(--muted); line-height:1.7}
+.pay-fine strong{color:var(--green-deep)}
+
+/* ── 클로징 ── */
+.closing{
+  text-align:center; padding:46px var(--pad) 50px;
+  background:var(--ink); color:var(--paper); position:relative; overflow:hidden;
+}
+.closing::before{
+  content:"∞"; position:absolute; right:-18px; top:-64px; font-family:var(--serif);
+  font-weight:900; font-size:220px; line-height:1; color:rgba(255,255,255,.04); pointer-events:none;
+}
+.closing p.msg{
+  font-family:var(--serif); font-weight:700; font-size:clamp(16.5px,4.8vw,20px);
+  line-height:1.8; position:relative;
+}
+.closing .thanks{margin-top:18px; font-size:13.5px; color:rgba(247,244,235,.7)}
+.closing .from{margin-top:4px; font-weight:800; font-size:14px}
+
+/* ── 푸터 ── */
+.footer{padding:32px var(--pad) 130px; text-align:center}
+.footer h3{font-family:var(--serif); font-weight:900; font-size:18px}
+.footer p{font-size:12.5px; color:var(--muted); margin-top:6px}
+.phone-btn{
+  display:inline-flex; align-items:center; gap:9px; margin-top:14px;
+  border:2px solid var(--ink); border-radius:999px; padding:12px 24px;
+  font-weight:800; font-size:16px; background:var(--white);
+  transition:transform .15s ease;
+}
+.phone-btn:active{transform:scale(.97)}
+.phone-btn svg{stroke:var(--green); stroke-width:2; fill:none}
+.footer-fn{margin-top:12px; font-size:11.5px; color:var(--muted)}
+
+/* ── 스티키 바 ── */
+.sticky{
+  position:fixed; left:0; right:0; bottom:0; z-index:60;
+  transform:translateY(110%); transition:transform .4s cubic-bezier(.5,0,.2,1);
+  padding:10px max(12px, env(safe-area-inset-left)) max(12px, env(safe-area-inset-bottom));
+  pointer-events:none;
+}
+.sticky.show{transform:none}
+.sticky-in{
+  max-width:calc(var(--maxw) - 24px); margin:0 auto; background:var(--white);
+  border:1.5px solid var(--ink); border-radius:16px; padding:10px 10px 10px 16px;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  box-shadow:0 10px 30px rgba(22,21,18,.22); pointer-events:auto;
+}
+.sticky-info{font-size:12.5px; font-weight:800; line-height:1.4}
+.sticky-info small{display:block; font-weight:700; color:var(--green); font-size:11.5px}
+.sticky-btn{
+  background:var(--green); color:#fff; border-radius:11px; padding:12px 18px;
+  font-weight:800; font-size:14.5px; white-space:nowrap;
+}
+.sticky-btn:active{transform:scale(.97)}
+
+/* ── 토스트 & 폭죽 ── */
+#toast{
+  position:fixed; left:50%; bottom:96px; transform:translate(-50%,16px); z-index:80;
+  background:var(--ink); color:var(--paper); font-size:13.5px; font-weight:700;
+  padding:11px 20px; border-radius:999px; opacity:0; pointer-events:none;
+  transition:opacity .3s ease, transform .3s ease; white-space:nowrap; max-width:92vw;
+}
+#toast.show{opacity:1; transform:translate(-50%,0)}
+.confetti{
+  position:fixed; top:-12px; z-index:85; width:9px; height:14px; border-radius:2px;
+  pointer-events:none; animation:fall linear forwards;
+}
+@keyframes fall{to{transform:translateY(105vh) rotate(720deg); opacity:.15}}
+
+/* ── 스크롤 리빌 ── */
+.rv{opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease}
+.rv.on{opacity:1; transform:none}
+
+/* ── 모션 최소화 존중 ── */
+@media (prefers-reduced-motion: reduce){
+  #splash{display:none}
+  .stage,.rv{opacity:1 !important; transform:none !important; transition:none !important}
+  .uline path{stroke-dashoffset:0 !important; transition:none !important}
+  .ticker-track{animation:none}
+  .hcb-btn::after{animation:none; display:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- 오프닝: ∞ 로고가 그려진 뒤, 종이가 걷히듯 페이지 공개 -->
+<div id="splash" aria-hidden="true">
+  <svg class="logo" width="72" height="44" viewBox="0 0 66 40">
+    <circle cx="20" cy="20" r="15"></circle>
+    <circle cx="46" cy="20" r="15"></circle>
+  </svg>
+  <div class="word">CHUTZPAH</div>
+</div>
+
+<div class="sheet">
+
+  <!-- 상단 바 -->
+  <header class="topbar">
+    <div class="brand">
+      <svg width="26" height="16" viewBox="0 0 66 40">
+        <circle cx="20" cy="20" r="15"></circle>
+        <circle cx="46" cy="20" r="15"></circle>
+      </svg>
+      후츠파에듀케이션
+    </div>
+    <div class="topdate">2026 PACEMAKER</div>
+  </header>
+
+  <!-- 히어로 -->
+  <section class="hero">
+    <div class="badge stage d1">For. 김도현 학생 &amp; 학부모님</div>
+
+    <p class="hero-quote stage d2">
+      "'무엇이 되고 싶은가'보다<br>
+      <span class="uline">'나는 누구인가'
+        <svg viewBox="0 0 200 10" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M3 7 C 45 3, 95 9, 143 5 S 190 6, 197 5"></path>
+        </svg>
+      </span>를 먼저 묻습니다"
+    </p>
+
+    <div class="hero-year stage d3">2026</div>
+    <h1 class="hero-title stage d4">페이스메이커<br>등록 안내</h1>
+    <p class="hero-sub stage d5">도현이의 3년을 하나의 뚜렷한 브랜드로 만드는 여정</p>
+    <p class="hero-note stage d5">본 페이지는 도현이를 위해 개별 제작되었습니다</p>
+  </section>
+
+  <!-- 티커 -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack">
+      <span>등록 마감 8.7 FRI</span><b>∞</b>
+      <span>전담 멘토 김영경 컨설턴트</span><b>∞</b>
+      <span>교육비 745,000원 × 7개월</span><b>∞</b>
+      <span>노션 전용 대시보드</span><b>∞</b>
+      <span>피드백 24시간 이내</span><b>∞</b>
+      <span>등록 마감 8.7 FRI</span><b>∞</b>
+      <span>전담 멘토 김영경 컨설턴트</span><b>∞</b>
+      <span>교육비 745,000원 × 7개월</span><b>∞</b>
+      <span>노션 전용 대시보드</span><b>∞</b>
+      <span>피드백 24시간 이내</span><b>∞</b>
+    </div>
+  </div>
+
+  <!-- 카운트다운 -->
+  <section class="sec rv">
+    <div class="count-box">
+      <div class="dchip" id="dchip">등록 마감까지</div>
+      <div class="count-grid" id="countGrid">
+        <div class="cell"><div class="num" id="cd-d">--</div><div class="lab">DAYS</div></div>
+        <div class="cell"><div class="num" id="cd-h">--</div><div class="lab">HOURS</div></div>
+        <div class="cell"><div class="num" id="cd-m">--</div><div class="lab">MIN</div></div>
+        <div class="cell"><div class="num" id="cd-s">--</div><div class="lab">SEC</div></div>
+      </div>
+      <p class="count-note">등록 마감 · <strong>2026년 8월 7일(금)</strong></p>
+    </div>
+  </section>
+
+  <!-- 인사말 -->
+  <section class="sec rv">
+    <div class="sec-label">GREETING</div>
+    <h2 class="sec-head">안녕하십니까,<br>후츠파에듀케이션입니다</h2>
+    <div class="letter">
+      <p>안녕하십니까, 후츠파에듀케이션 대표 <strong>송지원</strong>입니다.</p>
+      <p>저희는 <strong>'무엇이 되고 싶은가'보다 '나는 누구인가'를 먼저 탐색하는 것</strong>이 진정한 입시의 출발점이라고 믿습니다. 학생 한 명 한 명의 고유한 이야기를 발견하고, 그것을 대학이 알아볼 수 있는 뚜렷한 브랜드로 만들어 온 것이 후츠파의 20년입니다.</p>
+      <p>도현이와 함께하게 될 페이스메이커 과정의 등록 안내를 드립니다. 아래 내용을 차근차근 확인해 주시고, 궁금하신 점은 언제든 편하게 연락 주세요.</p>
+      <div class="sign">후츠파에듀케이션 대표 송지원 드림</div>
+    </div>
+  </section>
+
+  <!-- 입시 실적 -->
+  <section class="sec rv">
+    <div class="sec-label">2026 RESULTS</div>
+    <h2 class="sec-head">2026학년도 입시,<br>이렇게 증명했습니다</h2>
+    <div class="result gr">
+      <div class="result-top"><span class="school">동명고</span><span class="result-name">김성욱 학생 · 내신 1등급 후반</span></div>
+      <ul>
+        <li>서울대학교 일반전형 인류학과 <strong>최종합격</strong></li>
+        <li>연세대학교 활동우수형 문화인류학과 <strong>최종합격</strong></li>
+        <li>성균관대학교 탐구형 사회학과 <strong>최종합격</strong></li>
+        <li>고려대학교 계열적합형 사회학과 서류통과<small>자사고·특목고 위주 전형에서의 쾌거</small></li>
+      </ul>
+    </div>
+    <div class="result">
+      <div class="result-top"><span class="school">진양고</span><span class="result-name">석현우 학생 · 의약학 계열</span></div>
+      <ul>
+        <li>성균관대학교 의예과 서류통과<small>지방 일반고에서 합격하기 힘든 성과</small></li>
+        <li>KAIST <strong>최종합격</strong></li>
+        <li>울산대·부산대·경상대 의예과 <strong>최종합격</strong></li>
+      </ul>
+    </div>
+    <div class="result">
+      <div class="result-top"><span class="school">거창대성고</span><span class="result-name">이창민 학생 · 내신 2등급대</span></div>
+      <ul>
+        <li>성균관대학교 약학과 <strong>최종합격</strong><small>내신 2등급대에도 불구하고 이룬 성과</small></li>
+      </ul>
+    </div>
+    <p class="result-close">이러한 결과는 내신 등급만으로는 설명할 수 없는, <strong>학생 개인의 브랜딩과 깊이 있는 탐구 활동</strong>이 대학 평가에서 얼마나 중요한지를 보여줍니다. 도현이도 이러한 성공 스토리의 주인공이 될 수 있도록 최선을 다해 함께하겠습니다.</p>
+  </section>
+
+  <!-- 전담 팀 -->
+  <section class="sec rv">
+    <div class="sec-label">TEAM</div>
+    <h2 class="sec-head">도현이의 입시 레이스를<br>함께할 전담 팀</h2>
+    <div class="team-table">
+      <div class="member">
+        <div class="role">총괄 디렉팅</div>
+        <div>
+          <div class="mname">송지원 대표</div>
+          <div class="mdesc">입시 전략 수립 및 전체 방향성 총괄</div>
+        </div>
+      </div>
+      <div class="member lead">
+        <div class="role">전담 멘토</div>
+        <div>
+          <div class="mname">김영경 컨설턴트<span class="lead-chip">MAIN</span></div>
+          <div class="mdesc">학생·학부모님과의 상시 소통 창구</div>
+        </div>
+      </div>
+      <div class="team-sub">후츠파 컨설턴트 팀 — 다각적 분석 및 전문 피드백</div>
+      <div class="member">
+        <div class="role">국어교육 전공</div>
+        <div>
+          <div class="mname">김영경 컨설턴트</div>
+          <div class="mdesc">국어 교과 검토 및 피드백 · 생기부 기록 구조 검토 전문</div>
+        </div>
+      </div>
+      <div class="member">
+        <div class="role">수학교육 전공</div>
+        <div>
+          <div class="mname">신욱희 컨설턴트</div>
+          <div class="mdesc">수학 교과 검토 및 피드백 · 기획 검토 전문</div>
+        </div>
+      </div>
+      <div class="member">
+        <div class="role">철학 전공</div>
+        <div>
+          <div class="mname">양민식 컨설턴트</div>
+          <div class="mdesc">사회 교과 검토 및 피드백 · 브랜딩 기획 전문</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 소통 방식 -->
+  <section class="sec rv">
+    <div class="sec-label">COMMUNICATION</div>
+    <h2 class="sec-head">김영경 컨설턴트와의<br>소통 방식</h2>
+    <div class="comm">
+      <div class="comm-item">
+        <div class="comm-icn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
+        <div>
+          <h4>상시 소통 (온라인)</h4>
+          <ul>
+            <li>노션 &amp; 카카오톡으로 언제든 질문 가능</li>
+            <li>수행평가 기획 · 과제 피드백 · 학생부 정리 모두 노션에서 진행</li>
+          </ul>
+        </div>
+      </div>
+      <div class="comm-item">
+        <div class="comm-icn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <h4>대면 상담 (필요시)</h4>
+          <ul>
+            <li>학기 초 새 학기 기획 미팅</li>
+            <li>중요 의사결정 시기</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="comm-note">대면 상담 일정은 등록 후 상호 조율하여 확정합니다.</p>
+    <div class="reply-box">
+      <h5>피드백 응답 안내</h5>
+      <p>컨설턴트가 상담·설명회·출장 등의 일정으로 즉각적인 피드백이 어려울 수 있습니다. 다만 모든 피드백은 <strong>최대 24시간 이내</strong>에 답변드리는 것을 원칙으로 합니다.</p>
+    </div>
+  </section>
+
+  <!-- 등록 절차 -->
+  <section class="sec rv">
+    <div class="sec-label">PROCESS</div>
+    <h2 class="sec-head">등록 절차는<br>세 단계로 진행됩니다</h2>
+    <div class="steps">
+      <div class="step hot">
+        <div class="step-no">1</div>
+        <div>
+          <h4>약관 동의 및 전자 서명</h4>
+          <p>페이지 하단의 약관을 확인하신 후 서명란에 서명해 주세요.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-no">2</div>
+        <div>
+          <h4>등록비 결제 안내</h4>
+          <p>서명이 완료되면 등록 의사가 확정됩니다.</p>
+          <div class="step-detail"><strong>📱 서명이 확인된 후 1일 이내</strong>에 결제 안내 문자를 발송해 드립니다.<br>문자에 포함된 계좌번호 또는 카드결제 링크로 결제하시면 됩니다.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-no">3</div>
+        <div>
+          <h4>노션 대시보드 개설</h4>
+          <p>도현이 전용 입시 관리 페이지를 생성해 공유해 드립니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 서비스 안내 -->
+  <section class="sec rv">
+    <div class="sec-label">SERVICE</div>
+    <h2 class="sec-head">페이스메이커가<br>함께하는 것들</h2>
+    <ul class="svc">
+      <li><svg width="18" height="18" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>입시 전략 및 로드맵 설계</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>수행평가 기획 및 피드백</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>학교생활기록부 관리</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>탐구 주제 브레인스토밍</li>
+    </ul>
+    <div class="svc-warn">
+      <svg width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <span>페이스메이커는 입시 전략과 생기부 관리에 집중하며, 내신 교과 학습 지도는 포함되지 않습니다.</span>
+    </div>
+  </section>
+
+  <!-- 기간 -->
+  <section class="sec rv">
+    <div class="sec-label">PERIOD</div>
+    <h2 class="sec-head">교육 기간 안내</h2>
+    <div class="period">
+      <div class="period-item">
+        <div class="pbadge">사전 관리</div>
+        <div class="pdate">등록 즉시 시작</div>
+        <div class="pdesc">탐구 주제 브레인스토밍 및 새 학기 준비</div>
+      </div>
+      <div class="period-item main">
+        <div class="pbadge">정규 교육</div>
+        <div class="pdate">총 7개월</div>
+        <div class="pdesc">본격적인 생기부 관리 및 입시 전략 실행</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 노션 대시보드 & 카카오 -->
+  <section class="sec rv">
+    <div class="sec-label">DASHBOARD</div>
+    <h2 class="sec-head">도현이의 입시 대시보드</h2>
+    <p class="sec-lede">학생과 컨설팅팀이 함께 사용하는 노션 페이지입니다.<br>질문&amp;답변, 수행평가 기획·피드백, 생기부 정리가 모두 이곳에서 이뤄집니다.</p>
+    <div class="setup">
+      <div class="setup-row">
+        <div class="setup-no">1</div>
+        <div><h5>노션 회원가입</h5><p>아래 버튼으로 노션에 가입해 주세요. 이미 계정이 있다면 바로 2번으로!</p></div>
+      </div>
+      <div class="setup-row">
+        <div class="setup-no">2</div>
+        <div><h5>카카오톡 친구추가</h5><p>아래 카카오톡 안내에 따라 김영경 컨설턴트를 친구로 추가해 주세요.</p></div>
+      </div>
+      <div class="setup-row">
+        <div class="setup-no">3</div>
+        <div><h5>가입 이메일 전송</h5><p>노션 가입 이메일을 카카오톡 1:1 채팅으로 보내주시면 <strong>대시보드 초대장</strong>을 보내드립니다.</p></div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-ink" href="https://www.notion.com/ko" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        노션 회원가입
+      </a>
+      <a class="btn btn-line" href="https://www.youtube.com/watch?v=Yqo0zcaqi7Q" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        사용법 영상
+      </a>
+    </div>
+    <div class="kakao-card">
+      <div class="kakao-head">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7-.2.7-.7 2.6-.8 3-.1.5.2.5.4.4.2-.1 2.6-1.8 3.7-2.5.6.1 1.3.1 2 .1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>
+        카카오톡 친구추가 방법
+      </div>
+      <div class="kakao-in">
+        <div class="kk-row">
+          <span class="kk-tag">방법 1</span>
+          <div><h6>ID로 검색</h6><p>친구 → 친구추가 → ID로 추가</p></div>
+        </div>
+        <div class="kk-id"><small>검색 ID:</small><b>kyky6346</b></div>
+        <div class="kk-row">
+          <span class="kk-tag">방법 2</span>
+          <div><h6>전화번호로 검색</h6><p>연락처에 <strong>010-4144-8232</strong> 저장 후<br>친구 → 친구추가 → 연락처</p></div>
+        </div>
+      </div>
+      <div class="after-add">친구추가 후 <strong>"노션 가입 이메일: ○○○@○○○.com"</strong> 형식으로 보내주시면 대시보드 초대 링크를 전달해 드립니다.</div>
+    </div>
+  </section>
+
+  <!-- HCB-DNA 과제 -->
+  <section class="sec rv">
+    <div class="sec-label">ASSIGNMENT</div>
+    <h2 class="sec-head">📋 도현이가 수행할 과제</h2>
+    <p class="sec-lede">맞춤형 입시 전략 수립을 위한 필수 설문입니다.<br>도현이의 강점과 성향을 파악하여 최적의 전략을 설계하는 데 활용되니, 성실하게 작성해 주세요.</p>
+    <div class="hcb-frame">
+      <div class="hcb-top">
+        <b>HCB-DNA 프로파일링</b>
+        <p>후츠파의 학생 분석 프레임워크</p>
+      </div>
+      <div class="hcb-body">
+        <div class="dna-sub">HCB — 학생이 작성하는 설문</div>
+        <div class="dna-grid">
+          <div class="dna-row"><span class="dna-key h">H</span><div><b>Historical Context</b><p>역사적 맥락으로 나의 경험을 돌아봅니다</p></div></div>
+          <div class="dna-row"><span class="dna-key h">C</span><div><b>Cognitive Structure</b><p>인지 구조를 통해 생각의 과정을 살펴봅니다</p></div></div>
+          <div class="dna-row"><span class="dna-key h">B</span><div><b>Bounce-back</b><p>회복 탄력성을 점검합니다</p></div></div>
+        </div>
+        <div class="dna-sub">DNA — 컨설팅팀의 분석</div>
+        <div class="dna-grid">
+          <div class="dna-row"><span class="dna-key d">D</span><div><b>Discover</b><p>설문을 통해 발견된 강점을 기반으로</p></div></div>
+          <div class="dna-row"><span class="dna-key d">N</span><div><b>Navigate</b><p>방향성과 도전의 기회를 발견하고</p></div></div>
+          <div class="dna-row"><span class="dna-key d">A</span><div><b>Act</b><p>실행 가능한 인사이트로 개인 맞춤형 전략을 수립합니다</p></div></div>
+        </div>
+        <div class="hcb-info">
+          <h6>작성 안내</h6>
+          <ul>
+            <li>총 9개 질문</li>
+            <li>각 질문마다 STAR+R 5개 항목 (상황·과제·행동·결과·성찰)</li>
+            <li>작성 예시 제공</li>
+            <li>예상 소요 시간 40~60분</li>
+          </ul>
+        </div>
+        <a class="hcb-btn" href="https://tally.so/r/0QV9j9" target="_blank" rel="noopener">
+          <span>HCB 설문 작성 시작하기</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <p class="hcb-hint">잠시 시간을 내어 차분히 작성해 주세요</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 교육비 & 전자 서명 -->
+  <section class="sec rv" id="pay">
+    <div class="sec-label">PAYMENT &amp; SIGN</div>
+    <h2 class="sec-head">교육비 안내 및<br>등록 서명</h2>
+    <div class="pay-frame">
+      <div class="pay-head">
+        <div class="lab">TOTAL</div>
+        <div class="pay-calc">월 745,000원 × 7개월</div>
+        <div class="pay-price">5,215,000<small>원</small></div>
+      </div>
+      <div class="pay-body">
+        <p class="pay-meta">현금 또는 카드 결제 중 선택하실 수 있습니다.</p>
+        <div class="deadline">
+          <svg width="17" height="17" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          등록 마감 · 2026년 8월 7일(금)
+        </div>
+        <details class="refund">
+          <summary>환불 규정 확인하기</summary>
+          <div class="refund-in">
+            <p>[학원의 설립·운영 및 과외교습에 관한 법률] 제18조에 의거하여 환불이 진행됩니다.</p>
+            <table class="refund-table">
+              <tr><th>해지 시점</th><th>반환 금액</th></tr>
+              <tr><td>교습 시작 전</td><td>전액</td></tr>
+              <tr><td>총 교습시간의 1/3 경과 전</td><td>2/3 해당액</td></tr>
+              <tr><td>총 교습시간의 1/2 경과 전</td><td>1/2 해당액</td></tr>
+              <tr><td>총 교습시간의 1/2 경과 후</td><td>반환하지 않음</td></tr>
+            </table>
+            <p class="refund-fn">※ 본 서비스는 정규 기간 시작 전 '사전 관리' 기간에도 컨설팅 용역이 제공되므로, 중도 해지 시 해당 기간을 교습 시간에 포함하여 산정합니다.</p>
+          </div>
+        </details>
+        <div class="agree">
+          <input type="checkbox" id="agree-check">
+          <label for="agree-check">위 서비스 범위, 기간 및 환불 규정을 모두 확인하였으며 이에 동의합니다.</label>
+        </div>
+        <div class="field">
+          <label for="signer-name">계약자 성명 (보호자)</label>
+          <input type="text" id="signer-name" placeholder="예: 김철수" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="signer-phone">연락처</label>
+          <input type="tel" id="signer-phone" placeholder="예: 010-1234-5678" autocomplete="tel">
+        </div>
+        <div class="sig-label">전자 서명 (보호자 또는 학생)</div>
+        <div class="canvas-wrap" id="canvas-wrap">
+          <canvas id="sig-canvas"></canvas>
+          <div class="sig-ph" id="sig-ph">이곳에 서명해 주세요</div>
+        </div>
+        <div class="sig-actions">
+          <button type="button" class="btn-clear" id="btn-clear">지우기</button>
+          <button type="button" class="btn-sig" id="btn-submit" disabled>서명 제출하기</button>
+        </div>
+        <p class="pay-fine">서명 제출 시 등록 의사가 확정되며,<br><strong>서명이 확인된 후 1일 이내</strong>에 결제 안내 문자가 발송됩니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 클로징 -->
+  <section class="closing rv">
+    <p class="msg">도현이가 자신만의 색깔을 발견하고<br>그 잠재력을 마음껏 펼칠 수 있도록,<br>전문가의 시선으로 꼼꼼하게 함께하겠습니다.</p>
+    <p class="thanks">감사합니다.</p>
+    <p class="from">후츠파에듀케이션 대표 송지원 드림</p>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="footer rv">
+    <h3>문의 안내</h3>
+    <p>등록 관련 문의사항이 있으시면 연락주세요.</p>
+    <a href="tel:010-4449-0829" class="phone-btn">
+      <svg width="17" height="17" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      010-4449-0829
+    </a>
+    <p class="footer-fn">학부모님 소통은 카카오톡 및 전화로 상시 가능합니다.</p>
+  </footer>
+
+</div><!-- /.sheet -->
+
+<!-- 스티키 바 -->
+<div class="sticky" id="sticky">
+  <div class="sticky-in">
+    <div class="sticky-info">등록 마감 8월 7일(금)<small id="sticky-dday">마감 임박</small></div>
+    <a href="#pay" class="sticky-btn">서명하러 가기</a>
+  </div>
+</div>
+
+<!-- 토스트 -->
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+/* ═══════════ 0. 기본 설정 ═══════════ */
+const EMAILJS_SERVICE_ID  = 'service_6nplqts';
+const EMAILJS_TEMPLATE_ID = 'template_3d2gunn';
+const EMAILJS_PUBLIC_KEY  = 'HG_GdYeopEfQJlOkw';
+const STUDENT_NAME = '김도현';
+const DEADLINE = new Date('2026-08-07T23:59:59+09:00');
+
+if (window.emailjs) emailjs.init(EMAILJS_PUBLIC_KEY);
+
+/* ═══════════ 1. 스플래시 → 페이지 공개 ═══════════ */
+(function(){
+  const splash = document.getElementById('splash');
+  const reveal = () => {
+    splash.classList.add('off');
+    document.body.classList.add('ready');
+    setTimeout(() => { splash.style.display = 'none'; }, 900);
+  };
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) { reveal(); return; }
+  setTimeout(reveal, 1600);
+})();
+
+/* ═══════════ 2. 카운트다운 ═══════════ */
+(function(){
+  const $d = document.getElementById('cd-d'),
+        $h = document.getElementById('cd-h'),
+        $m = document.getElementById('cd-m'),
+        $s = document.getElementById('cd-s'),
+        chip = document.getElementById('dchip'),
+        stickyD = document.getElementById('sticky-dday');
+  const pad = n => String(n).padStart(2, '0');
+  function tick(){
+    const diff = DEADLINE - new Date();
+    if (diff <= 0){
+      $d.textContent = $h.textContent = $m.textContent = $s.textContent = '00';
+      chip.textContent = '등록이 마감되었습니다';
+      if (stickyD) stickyD.textContent = '마감';
+      return;
+    }
+    const d = Math.floor(diff / 86400000),
+          h = Math.floor(diff % 86400000 / 3600000),
+          m = Math.floor(diff % 3600000 / 60000),
+          s = Math.floor(diff % 60000 / 1000);
+    $d.textContent = pad(d); $h.textContent = pad(h);
+    $m.textContent = pad(m); $s.textContent = pad(s);
+    chip.textContent = d > 0 ? `등록 마감까지 D-${d}` : '오늘 마감!';
+    if (stickyD) stickyD.textContent = d > 0 ? `D-${d}` : '오늘 마감';
+    requestAnimationFrame ? setTimeout(tick, 1000) : setTimeout(tick, 1000);
+  }
+  tick();
+})();
+
+/* ═══════════ 3. 스크롤 리빌 ═══════════ */
+(function(){
+  const els = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window)){ els.forEach(e => e.classList.add('on')); return; }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting){ en.target.classList.add('on'); io.unobserve(en.target); }
+    });
+  }, { threshold: .12 });
+  els.forEach(e => io.observe(e));
+})();
+
+/* ═══════════ 4. 스티키 바 ═══════════ */
+(function(){
+  const sticky = document.getElementById('sticky');
+  const paySec = document.getElementById('pay');
+  let pastHero = false, payVisible = false, submitted = false;
+  const update = () => {
+    sticky.classList.toggle('show', pastHero && !payVisible && !submitted);
+  };
+  window.addEventListener('scroll', () => {
+    pastHero = window.scrollY > window.innerHeight * .8;
+    update();
+  }, { passive: true });
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(en => {
+      payVisible = en[0].isIntersecting; update();
+    }, { threshold: .05 }).observe(paySec);
+  }
+  window.__hideSticky = () => { submitted = true; update(); };
+})();
+
+/* ═══════════ 5. 캔버스 서명 ═══════════ */
+const canvas = document.getElementById('sig-canvas');
+const ctx = canvas.getContext('2d');
+const wrap = document.getElementById('canvas-wrap');
+const ph = document.getElementById('sig-ph');
+let drawing = false, hasSigned = false;
+
+function resizeCanvas(){
+  const r = wrap.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+  const prev = hasSigned ? canvas.toDataURL() : null;
+  canvas.width = r.width * dpr;
+  canvas.height = r.height * dpr;
+  ctx.scale(dpr, dpr);
+  ctx.lineWidth = 2;
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+  ctx.strokeStyle = '#161512';
+  if (prev){
+    const img = new Image();
+    img.onload = () => ctx.drawImage(img, 0, 0, r.width, r.height);
+    img.src = prev;
+  }
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+function pos(e){
+  const r = canvas.getBoundingClientRect();
+  const t = e.touches ? e.touches[0] : e;
+  return { x: t.clientX - r.left, y: t.clientY - r.top };
+}
+function start(e){
+  e.preventDefault();
+  drawing = true;
+  const p = pos(e);
+  ctx.beginPath(); ctx.moveTo(p.x, p.y);
+}
+function move(e){
+  if (!drawing) return;
+  e.preventDefault();
+  const p = pos(e);
+  ctx.lineTo(p.x, p.y); ctx.stroke();
+  if (!hasSigned){
+    hasSigned = true;
+    ph.style.display = 'none';
+    wrap.classList.add('signed');
+    checkFormValidity();
+  }
+}
+function end(){ drawing = false; }
+
+canvas.addEventListener('mousedown', start);
+canvas.addEventListener('mousemove', move);
+window.addEventListener('mouseup', end);
+canvas.addEventListener('touchstart', start, { passive: false });
+canvas.addEventListener('touchmove', move, { passive: false });
+canvas.addEventListener('touchend', end);
+
+/* ═══════════ 6. 폼 검증 ═══════════ */
+const agreeCheck = document.getElementById('agree-check');
+const nameInput = document.getElementById('signer-name');
+const phoneInput = document.getElementById('signer-phone');
+const btnSubmit = document.getElementById('btn-submit');
+const btnClear = document.getElementById('btn-clear');
+
+function checkFormValidity(){
+  const okName  = nameInput.value.trim().length >= 2;
+  const okPhone = phoneInput.value.replace(/\D/g, '').length >= 10;
+  btnSubmit.disabled = !(hasSigned && agreeCheck.checked && okName && okPhone);
+}
+[agreeCheck, nameInput, phoneInput].forEach(el => {
+  el.addEventListener('input', checkFormValidity);
+  el.addEventListener('change', checkFormValidity);
+});
+
+btnClear.addEventListener('click', () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  hasSigned = false;
+  ph.style.display = '';
+  wrap.classList.remove('signed');
+  checkFormValidity();
+});
+
+/* ═══════════ 7. 토스트 & 폭죽 ═══════════ */
+const toast = document.getElementById('toast');
+let toastTimer = null;
+function showToast(msg, ms = 3200){
+  toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), ms);
+}
+function confetti(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const colors = ['#0E7B45', '#161512', '#FEE500', '#E4F0E7', '#ffffff'];
+  for (let i = 0; i < 90; i++){
+    const c = document.createElement('div');
+    c.className = 'confetti';
+    c.style.left = Math.random() * 100 + 'vw';
+    c.style.background = colors[i % colors.length];
+    c.style.animationDuration = (2.4 + Math.random() * 1.8) + 's';
+    c.style.animationDelay = (Math.random() * .6) + 's';
+    c.style.transform = `rotate(${Math.random() * 360}deg)`;
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 5200);
+  }
+}
+
+/* ═══════════ 8. 제출 (EmailJS) ═══════════ */
+function lockForm(){
+  btnSubmit.disabled = true;
+  btnSubmit.textContent = '제출 완료됨 ✓';
+  [agreeCheck, nameInput, phoneInput, btnClear].forEach(el => el.disabled = true);
+  canvas.style.pointerEvents = 'none';
+  if (window.__hideSticky) window.__hideSticky();
+}
+btnSubmit.addEventListener('click', () => {
+  if (btnSubmit.disabled) return;
+  btnSubmit.disabled = true;
+  btnSubmit.textContent = '제출 중...';
+  const params = {
+    student_name: STUDENT_NAME,
+    signer_name: nameInput.value.trim(),
+    signer_phone: phoneInput.value.trim(),
+    date: new Date().toLocaleString('ko-KR'),
+    signature_img: canvas.toDataURL('image/png')
+  };
+  const done = () => {
+    lockForm();
+    confetti();
+    showToast('서명이 제출되었습니다. 결제 안내 문자를 보내드리겠습니다 ✓', 4200);
+  };
+  if (!window.emailjs){
+    done();
+    showToast('등록은 완료되었으나 알림 전송에 실패했습니다. 전화로 문의해주세요.', 4600);
+    return;
+  }
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
+    .then(done)
+    .catch(() => {
+      lockForm();
+      showToast('등록은 완료되었으나 알림 전송에 실패했습니다. 전화로 문의해주세요.', 4600);
+    });
+});
+</script>
+</body>
+</html>
